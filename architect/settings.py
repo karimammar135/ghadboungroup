@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-m#jbg0)0p^8-r$-5w84)^jl7$n98**$bhg4&o)y_a!%@bp&4u2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh', 'localhost']
 
 
 # Application definition
@@ -79,9 +80,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'aFA*eD--f4A5Adf1gaf1EegAe*gAcb-D',
+        'PASSWORD': 'a5fEe*GcF-DFe53gf4CG6*B-216Fga6d',
         'HOST': 'monorail.proxy.rlwy.net',
-        'PORT': '18946',
+        'PORT': '22256',
     }
 }
 
@@ -120,8 +121,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'ghadboungroup.User'
+
+DCS_SESSION_COOKIE_SAMESITE = 'None' 
+
+SESSION_COOKIE_SAMESITE_FORCE_ALL = True
