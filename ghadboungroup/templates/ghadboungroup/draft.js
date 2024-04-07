@@ -1,0 +1,1 @@
+{(props.screenWidth > '480') && <img src={bars} alt="bars"></img> || <img src={bars2} alt="bars"></img>}

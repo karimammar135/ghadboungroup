@@ -1,0 +1,169 @@
+
+.footer {
+    margin-top: 400px;
+    background-color: #201F1D;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px 0 20px;
+
+    .main_container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, auto) 1fr;
+        @media (max-width: 865px){
+            grid-template-columns: repeat(3, auto);
+            grid-column-gap: 20px;
+            grid-row-gap: 70px;
+        }
+        @media (max-width: 550px){
+            grid-template-columns: repeat(1, auto);
+            grid-gap: 70px;
+        }
+        grid-auto-rows: auto;
+        grid-gap: 70px;
+        max-width: 1000px;
+
+        h3 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #fff;
+        }
+        .description {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            .logo {
+                display: flex;
+                flex-direction: column;
+                gap: 11px;
+                img{
+                    width: 56px;
+                }
+                h1 {
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 500;
+                    font-size: 24px;
+                    color: #F8780F;
+                    white-space: nowrap;
+                }
+                @media(max-width: 625px){
+                    gap: 10px;
+                    img{
+                        width: 44px;
+                    }
+                    h1 {
+                        font-size: 20px;
+                    }
+                }
+            }
+            p {
+                max-width: 212px;
+                color: #fff;
+                font-weight: 100;
+                font-size: 16px;
+            }
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 9px;
+                li {
+                    color: #fff;
+                    font-weight: 150;
+                    font-size: 14px;
+                    cursor: pointer;
+                }
+                li:hover {
+                    color: #F8780F;
+                }
+            }
+        }
+        .recent_works {
+            display: flex;
+            justify-content: flex-end;
+            @media (max-width: 865px){
+                justify-content: flex-start;
+            }
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                .works {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    width: 240px;
+                    div{
+                        height: 65px;
+                        width: 65px;
+                        background-color: #e66d0a;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer_bottom {
+        width: 100%;
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 30px 0 30px 0;
+        
+        .line {
+            width: 100%;
+            height: 2px;
+            background-color: #515151;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 20px 0 20px;
+            @media (max-width: 600px) {
+                padding: 0;
+            }
+
+            span {
+                font-weight: 200;
+                color: #fff;
+                font-size: 14px;
+            }
+            ul {
+                list-style: none;
+                display: flex;
+                gap: 35px;
+                @media (max-width: 600px) {  
+                    gap: 20px;
+                }
+                padding: 0;
+
+                li {
+                    color: #fff;
+                    font-size: 13px;
+                }
+                li:hover {
+                    color:#F8780F;
+                }
+                li:last-child {
+                    color: #F8780F;
+                }
+                li:last-child:hover {
+                    color:#e66d0a;
+                }
+            }
+        }
+    }
+}
