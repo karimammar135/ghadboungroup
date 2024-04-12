@@ -141,7 +141,7 @@
                 color: #fff;
                 font-size: 14px;
             }
-            ul {
+            .social-media-list {
                 list-style: none;
                 display: flex;
                 gap: 35px;
@@ -149,7 +149,7 @@
                     gap: 20px;
                 }
                 padding: 0;
-
+            
                 li {
                     color: #fff;
                     font-size: 13px;
@@ -164,6 +164,7 @@
                     color:#e66d0a;
                 }
             }
+            
         }
     }
 }

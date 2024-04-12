@@ -86,7 +86,7 @@ function FooterBottom({ smallScreen }) {
             <div className='content'>
                 <span>Copy Right @ 2024</span>
                 {smallScreen && <span>Created with love</span>}
-                <ul>
+                <ul className='social-media-list'>
                     <li><i className="fa-brands fa-instagram"></i></li>
                     <li><i className="fa-brands fa-linkedin-in"></i></li>
                     <li><i className="fa-brands fa-facebook-f"></i></li>

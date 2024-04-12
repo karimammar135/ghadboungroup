@@ -8,6 +8,7 @@
 }
 
 .nav-wrapper {
+  z-index: 3;
   position: sticky;
   top: 0;
   width: 100%;
@@ -24,6 +25,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+@media (min-width: 1700px) {
+  .nav-wrapper nav {
+    max-width: 1360px;
+  }
 }
 @media (max-width: 1100px) {
   .nav-wrapper nav {

@@ -1,9 +1,10 @@
 import React from 'react'
+import MainSection from './MainSection'
 
 export default function Home() {
   return (
     <div>
-      Home Page
+      <MainSection />
     </div>
   )
 }
