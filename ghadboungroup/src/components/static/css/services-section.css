@@ -1,0 +1,108 @@
+.services-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0 100px 0;
+}
+@media (max-width: 960px) {
+  .services-section {
+    padding-bottom: 60px;
+  }
+}
+.services-section .section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 50px 0 50px;
+}
+@media (min-width: 1700px) {
+  .services-section .section-wrapper {
+    max-width: 1000px;
+  }
+}
+@media (max-width: 960px) {
+  .services-section .section-wrapper {
+    margin: 0 40px 0 40px;
+    gap: 60px;
+  }
+}
+.services-section .section-wrapper .top-container {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+}
+@media (max-width: 960px) {
+  .services-section .section-wrapper .top-container {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+}
+.services-section .section-wrapper .top-container .image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  height: 250px;
+  flex-grow: 1;
+}
+.services-section .section-wrapper .top-container .text-container {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+}
+.services-section .section-wrapper .top-container .text-container h1 {
+  font-size: 32px;
+  font-weight: 400;
+}
+@media (max-width: 410px) {
+  .services-section .section-wrapper .top-container .text-container h1 {
+    max-width: 275px;
+  }
+}
+.services-section .section-wrapper .top-container .text-container p {
+  font-size: 16px;
+  color: #5E5E5E;
+  width: 445px;
+}
+@media (max-width: 960px) {
+  .services-section .section-wrapper .top-container .text-container p {
+    width: 100%;
+  }
+}
+.services-section .section-wrapper .bottom-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 50px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 815px) {
+  .services-section .section-wrapper .bottom-container {
+    flex-wrap: wrap;
+  }
+}
+.services-section .section-wrapper .bottom-container .service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.services-section .section-wrapper .bottom-container .service img {
+  width: 60px;
+}
+.services-section .section-wrapper .bottom-container .service h1 {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+.services-section .section-wrapper .bottom-container .service p {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  color: #5E5E5E;
+}/*# sourceMappingURL=services-section.css.map */

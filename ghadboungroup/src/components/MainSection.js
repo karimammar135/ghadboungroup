@@ -104,7 +104,7 @@ export default function MainSection() {
                     </ul>
                     <div className='text'>
                         <h1>Design Your Space For Living</h1>
-                        <button>Take a Look</button>
+                        <button className='default-btn'>Take a Look</button>
                     </div>
                 </div>
             </div>

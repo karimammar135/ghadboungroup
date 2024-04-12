@@ -7,6 +7,26 @@
   }
 }
 
+.default-btn {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: #F8780F;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+}
+@media (max-width: 880px) {
+  .default-btn {
+    margin-top: 0;
+  }
+}
+
+.default-btn:hover {
+  background-color: #cf6712;
+}
+
 .nav-wrapper {
   z-index: 3;
   position: sticky;
