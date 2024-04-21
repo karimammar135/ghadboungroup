@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
@@ -9,6 +9,7 @@ import Services from "./Services"
 import NotFound from './NotFound.js'
 import Gallery from "./Gallery.js"
 import ContactUs from './ContactUs'
+import Loader from './Loader'
 
 export default function App(){
     return (

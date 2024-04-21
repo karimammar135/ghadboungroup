@@ -1,0 +1,111 @@
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    background-color: #4e443c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            img{
+                width: 100px;
+                animation: strech 2s infinite;
+            }
+            .marquee {
+                display: inline-block;
+                h1 {
+                    position: relative;
+                    overflow: hidden;
+                    padding-right: 5px;
+                    
+                    width: 0;
+                    animation: typing 1s steps(20, end) forwards;
+
+                    font-weight: 300;
+                    font-size: 24px;
+                    color: #ffffff;
+                    white-space: nowrap;
+                    
+                }
+                h1:after {
+                    content: '';
+                    height: 90%; //You can change this if you want smaller/bigger borders
+                    width: .15rem;
+                    
+                    position: absolute;
+                    right: 0;
+                    top: 60%; // If you want to set a smaller height and center it, change this value
+                    transform: translateY(-50%);
+                    animation: blink .8s infinite;
+                    
+                    background-color: #F8780F; // The color of your border
+                }
+            }
+            @media(min-width: 1500px){
+                img{
+                    width: 100px;
+                }
+                h1 {
+                    font-size: 30px;
+                }
+            }
+            @media(max-width: 625px){
+                img{
+                    width: 100px;
+                }
+                h1 {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    
+}
+
+// Typing effect
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+// cursor blink effect
+@keyframes blink {
+    from { background-color: transparent }
+    to { background-color: #F8780F; }
+}
+
+// move marguee left to right
+@keyframes move-left-to-right{
+    from {
+        transform: translateX(-20.5%);
+    }
+    to {
+        transform: translate(30%);
+    }
+}
+
+// strech out and in
+@keyframes strech {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.1;
+    }
+    100% {
+        scale: 1;
+    }
+}
