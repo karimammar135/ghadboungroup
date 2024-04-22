@@ -11,6 +11,7 @@
   align-items: center;
 }
 .loader .container {
+  min-height: 186px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +35,7 @@
   overflow: hidden;
   padding-right: 5px;
   width: 0;
-  animation: typing 1s steps(20, end) forwards;
+  animation: typing 1.7s 0.5s steps(20, end) forwards;
   font-weight: 300;
   font-size: 24px;
   color: #ffffff;
@@ -97,7 +98,7 @@
     scale: 1;
   }
   50% {
-    scale: 1.1;
+    scale: 1.18;
   }
   100% {
     scale: 1;

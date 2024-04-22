@@ -1052,6 +1052,11 @@
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.15.1.tgz#221fd31a65186b9bc027b74573485fb3226dff7f"
   integrity sha512-zcU0gM3z+3iqj8UX45AmWY810l3oUmXM7uH4dt5xtzvMhRtYVhKGOmgOd1877dOPPepfCjUv57w+syamWIYe7w==
 
+"@twicpics/components@^0.29.0":
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/@twicpics/components/-/components-0.29.0.tgz#ebd250afc68306dfc2b4abbcd17ee81b8e5c011b"
+  integrity sha512-JJJf2iFIlmY8KBNIV4mk5FRU+foYkKq/sntfX8zJ4SS61GIZbYLWc3wN1n7x97r/kLaqsa+D73EuWBck3J+ALA==
+
 "@types/eslint-scope@^3.7.3":
   version "3.7.7"
   resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-3.7.7.tgz#3108bd5f18b0cdb277c867b3dd449c9ed7079ac5"
