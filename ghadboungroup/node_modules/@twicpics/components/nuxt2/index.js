@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("path");module.exports.meta=require("../package.json"),exports.default=function(s){const o={...s||{},...this.options.twicpics||{}};o.domain||console.warn("twicpics nuxt module : domain has not been configured. Please check nuxt.config.js file"),this.options.css.push("@twicpics/components/style.css"),this.addPlugin({src:e.resolve(__dirname,"./plugin.js"),options:o})};
+//# sourceMappingURL=index.js.map

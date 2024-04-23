@@ -1,0 +1,1 @@
+import{Plugin}from'vue';declare const plugin:Plugin;export{plugin as default};
