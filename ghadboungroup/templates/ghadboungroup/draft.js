@@ -1,36 +1,101 @@
-:host .swiper-wrapper {
-    background-color: red;
-    height: 500px;
-}
-:host ::slotted(swiper-slide) {
-    overflow: hidden;
-    height: 400px;
-}
-::slotted(.swiper-slide-next) {
-    border: 2px solid #fff;
-    tranform: scale(1.5);
-}
-::slotted(.swiper-slide-active) {
-    border: 2px solid #000;
+<div className='navbar2'>
+      <div className='icons'>
+        <NavLink to="/contactus"><i className="fa-solid fa-paper-plane"></i></NavLink>
+        <img src={search_icon} alt="search"></img>
+      </div>
+      {!open && <img src={bars} alt="bars" onClick={() => toggleDropdown()}></img> ||
+        <>
+          <img src={bars_open} alt="bars_open" onClick={() => toggleDropdown()}></img>
+          <ul className='dropdown'>
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><DropMenu name="Services" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown}>
+                  <DropItem link="/services/#modern-fetures">Modern features</DropItem>
+                  <DropItem link="/services/#post-tension">Post tension</DropItem>
+                </DropMenu>
+            </li>
+            <li><DropMenu name="Categories" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown}>
+                  <DropItem link="/gallery">gallery</DropItem>
+                  <DropItem link="/gallery/kitchen">Kitchen</DropItem>
+                  <DropItem link="/gallery/bathroom">Bath room</DropItem>
+                </DropMenu>
+            </li>
+            <li><NavLink to="/contactus">Contact us</NavLink></li>
+            <button onClick={() => toggleDropdown()}><i className="fa-solid fa-arrow-up-short-wide"></i></button>
+          </ul>
+        </>
+      }
+    </div>
+
+
+// new
+return (
+    
+  <div className='navbar2'>
+    <div className='icons'>
+        <NavLink to="/contactus"><i className="fa-solid fa-paper-plane"></i></NavLink>
+        <img src={search_icon} alt="search"></img>
+    </div>
+    {!open && <img src={bars} alt="bars" onClick={() => toggleDropdown()}></img> ||
+        <>
+        
+        <i className="fa-regular fa-rectangle-xmark z-10 text-3xl text-white" onClick={() => toggleDropdown()}></i>
+        <div className='absolute h-screen w-screen bg-zinc-900 top-0 right-0 flex flex-col justify-center items-center gap-20'>
+          <ul className="flex flex-col justify-center items-center gap-10">
+            <li><NavLink to="/" className={classNames("block text-3xl text-white", {'hide': (expand != '')})}>Home</NavLink></li>
+            <li><DropMenu name="Services" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} expand={expand} setExpand={setExpand}>
+                    <DropItem link="/services/#modern-fetures">Modern features</DropItem>
+                    <DropItem link="/services/#post-tension">Post tension</DropItem>
+                </DropMenu>
+            </li>
+            <li><DropMenu name="Categories" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} expand={expand} setExpand={setExpand}>
+                    <DropItem link="/gallery">gallery</DropItem>
+                    <DropItem link="/gallery/kitchen">Kitchen</DropItem>
+                    <DropItem link="/gallery/bathroom">Bath room</DropItem>
+                </DropMenu>
+            </li>
+            <li><NavLink to="/contactus" className={classNames('block text-3xl text-white', {'hide': (expand != '')})}>Contact us</NavLink></li>
+          </ul>
+          <div className='flex flex-col justify-center items-center gap-2'>
+            <img src={logo} alt="logo" className='w-20'></img>
+            <h1 className='logo-text'>Ghadboun group</h1>
+          </div>
+        </div>
+        </>
+    }
+</div>
+)
 }
 
-background-image: url("https://s3.ap-southeast-2.amazonaws.com/media.lookboxliving.com/2022/09/1.livingrooms.jpg"), linear-gradient(rgba(58, 51, 45, 0.98), rgba(58, 51, 45, 0.98))
-<div className='images-container'>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-    <swiper-container init="false" className="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true" slides-per-view="3" coverflow-effect-rotate="0" coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="0" coverflow-effect-slide-shadows="true" loop="true">
-        <swiper-slide>
-            <img src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2023/7/19/3/DOTY2023_Dramatic-Before-And-Afters_Hidden-Hills-11.jpg.rend.hgtvcom.1280.1280.suffix/1689786863909.jpeg" alt="img"></img>
-        </swiper-slide>
-        <swiper-slide>
-            <img src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2023/7/19/3/DOTY2023_Dramatic-Before-And-Afters_Hidden-Hills-11.jpg.rend.hgtvcom.1280.1280.suffix/1689786863909.jpeg" alt="img"></img>
-        </swiper-slide>
-        <swiper-slide>
-            <img src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2023/7/19/3/DOTY2023_Dramatic-Before-And-Afters_Hidden-Hills-11.jpg.rend.hgtvcom.1280.1280.suffix/1689786863909.jpeg" alt="img"></img>
-        </swiper-slide>
-        <swiper-slide>Slide 4</swiper-slide>
-        <swiper-slide>Slide 5</swiper-slide>
-        <swiper-slide>Slide 6</swiper-slide>
-    </swiper-container>
-    <button className='prev'>Swipe previous</button>
-    <button className='next'>Swipe next</button>
-</div>
+function DropMenu(props){
+function toggleDropdown(e){
+  e.preventDefault(); 
+  if (props.openDropdown === props.name){
+    props.setOpenDropdown('');
+    props.setExpand('')
+  } else {
+    props.setOpenDropdown(props.name);
+    props.setExpand(props.name)
+  }
+}
+console.log(props.openDropdown)
+
+return (
+  <div className={classNames('block drop-menu', {'grow': (props.expand === props.name), 'hide': (props.expand != '' && props.expand != props.name)})}>
+    <div className="drop-link text-3xl text-white" onClick={(e) => toggleDropdown(e)}>
+      {props.name}
+      <i className={classNames("fa-solid fa-angle-down", {'fa-angle-up': (props.openDropdown === props.name)})}></i>
+    </div>
+    <div className={classNames('slide-down flex flex-col justify-center items-center gap-3 mt-5', {'': (props.openDropdown === props.name), 'hidden': !(props.openDropdown === props.name)})}>
+      {props.children}
+    </div>
+  </div>
+)
+}
+
+function DropItem(props){
+return (
+  <div className='drop-item'>
+    <NavLink end className="text-2xl text-white" to={props.link}>{props.children}</NavLink>
+  </div>
+)
+}

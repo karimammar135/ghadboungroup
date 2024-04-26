@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --nav-height: 65px;
@@ -278,5 +279,88 @@
     }
     100% {
         height: 253px;
+    }
+}
+
+.navbar2{
+    .mobile-nav {
+        z-index: 4;
+        transition: transform 0.7s ease-in-out;
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    .mobile-nav2 {
+        z-index: 4;
+        transition: transform 0.7s ease-in-out;
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    .mobile-nav.open {
+        transform: translate(0);
+        opacity: 1;
+    }
+    .mobile-nav2.close {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+
+    #logo-wrapper::after {
+        height: 0;
+        background-color: transparent;
+    }
+    #logo-wrapper {
+        .logo-text {
+            color: #F8780F;
+            font-size: 30px;
+            font-family: "Jersey 20", sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+    }
+
+    #active {
+        position: relative;
+    }
+    #active::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #ffffff;
+        animation: underline-effect 0.5s forwards;
+    }
+
+    @keyframes underline-effect {
+        0% {
+            width: 0;
+        }
+        100%{
+            width: 100%;
+        }
+    }
+
+    .hide {
+        opacity: 1;
+        max-height: 100px;
+        transition: max-height 2s;
+        display: none;
+    }
+    .hide.close {
+        opacity: 0;
+        max-height: 0px;
+    }
+
+    .grow {
+        animation: grow 1s forwards;
+    }
+    @keyframes grow {
+        from {
+            flex-grow: 0;
+        }
+        to {
+            flex-grow: 1;
+        }
     }
 }

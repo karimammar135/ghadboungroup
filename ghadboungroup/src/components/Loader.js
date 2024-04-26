@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './static/css/loader.css';
+import './static/css/app.css';
 import logo from './static/images/logo.png';
 
 import BarLoader from "react-spinners/BarLoader";
