@@ -4,13 +4,14 @@ import './static/css/services-section.css'
 import interior from './static/images/interior.png'
 import architecture from './static/images/architecture.png'
 import construction from './static/images/construction.png'
+import background from './static/images/IMG_7330.jpg'
 
 export default function ServicesSection() {
   return (
     <section className='services-section'>
       <div className='section-wrapper'>
         <div className='top-container'>
-            <div className='image' style={{ backgroundImage: `url('')` }}></div>
+            <div className='image' style={{ backgroundImage: `url('${background}')` }}></div>
             <div className='text-container'>
                 <h1>Services provided by us</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae conse quuntur voluptatum laborum numquam blanditiis harum quis quam eius sed odit fugiat iusto fuga praesentium optio.
