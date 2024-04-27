@@ -10,7 +10,7 @@ export default function ServicesSection() {
     <section className='services-section'>
       <div className='section-wrapper'>
         <div className='top-container'>
-            <div className='image' style={{ backgroundImage: `url('https://www.bhg.com/thmb/dcA2PxsOahxmk2LgzWAaqOWFfxU=/6000x0/filters:no_upscale():strip_icc()/200522-EB_12-Living-Room_1267-b13debcb440a4471981d7ac637e76e7a.jpg')` }}></div>
+            <div className='image' style={{ backgroundImage: `url('')` }}></div>
             <div className='text-container'>
                 <h1>Services provided by us</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae conse quuntur voluptatum laborum numquam blanditiis harum quis quam eius sed odit fugiat iusto fuga praesentium optio.
