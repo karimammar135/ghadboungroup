@@ -20,6 +20,7 @@ export default function Navbar(){
       setSmallScreen(false)
     }
   }
+  
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
