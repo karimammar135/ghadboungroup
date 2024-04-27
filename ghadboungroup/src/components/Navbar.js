@@ -33,7 +33,7 @@ export default function Navbar(){
           <img src={logo} alt="logo"></img>
           <h1>Ghadboun group</h1>
         </div>
-        {!smallScreen && <DesktopMenu /> || <MobileMenu logo={logo}/>}
+        {!smallScreen && <DesktopMenu /> || <MobileMenu />}
       </nav>
     </section>
   )

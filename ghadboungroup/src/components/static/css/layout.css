@@ -289,6 +289,9 @@
     height: 253px;
   }
 }
+.navbar2 .custom-nav {
+  min-height: 110vh;
+}
 .navbar2 .mobile-nav {
   z-index: 9;
   transition: transform 0.7s ease-in-out;
@@ -333,9 +336,6 @@
   font-style: italic;
   font-size: 25px;
   color: #F8780F;
-}
-.navbar2 .hide {
-  display: none;
 }
 .navbar2 #active {
   position: relative;

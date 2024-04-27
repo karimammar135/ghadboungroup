@@ -284,6 +284,9 @@
 
 // Navbar 2
 .navbar2 {
+    .custom-nav{
+        min-height: 110vh;
+    }
     .mobile-nav {
         z-index: 9;
         transition: transform 0.7s ease-in-out;
@@ -332,9 +335,7 @@
         color: #F8780F;
     }
 
-    .hide {
-        display: none;
-    }
+    
 
     #active {
         position: relative;

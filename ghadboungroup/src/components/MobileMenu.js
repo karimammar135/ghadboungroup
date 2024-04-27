@@ -4,25 +4,9 @@ import { NavLink, useLocation } from 'react-router-dom'
 import classNames from 'classnames'
 import bars from './static/images/bars.png'
 import search_icon from './static/images/search-icon.png'
-
-const mobileMenu = {
-    initial: {
-      opacity: 0,
-      y: -75,
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.5,
-        duration: 1.5,
-        staggerChilden: 0.08,
-      }
-    }
-  }
+import logo from './static/images/logo-design.png'
   
-
-export default function MobileMenu({ logo }) {
+export default function MobileMenu() {
   const [expand, setExpand] = useState('')
   const location = useLocation();
   const { hash, pathname, search } = location;
@@ -50,8 +34,8 @@ export default function MobileMenu({ logo }) {
     <Icons />
     {!isOpen && <img src={bars} alt="bars" onClick={() => toggleMenu()}></img>
     || <i className="fa-regular fa-rectangle-xmark z-10 text-3xl text-white" onClick={() => toggleMenu()}></i>}
-    <div className={classNames('absolute min-h-screen w-screen bg-zinc-900 top-0 right-0 flex justify-center items-center', {'mobile-nav open': isOpen, 'mobile-nav2 close': !isOpen})}>
-      <div className='flex flex-col justify-center items-center gap-20'>
+    <div className={classNames('custom-nav absolute w-screen bg-zinc-900 top-0 right-0 flex justify-center items-center', {'mobile-nav open': isOpen, 'mobile-nav2 close': !isOpen})}>
+      <div className='flex flex-col justify-center items-center gap-10 absolute top-[110px]'>
         <div 
             className={`flex flex-col justify-center items-center gap-10 ${isOpen ? 'animate open': 'initial close'}`}
         >
@@ -68,8 +52,8 @@ export default function MobileMenu({ logo }) {
           <NavLink to="/contactus" className={classNames("block text-3xl text-white", {'hide': (expand != '')})} id={`${(`${pathname}${hash}` === '/contactus') ? 'active': ''}`} onClick={() => toggleMenu()}>Contact Us</NavLink>
         </div>
         <NavLink className='flex flex-col justify-center items-center gap-2' id='logo-wrapper' to="/" onClick={() => toggleMenu()}>
-          <img src={logo} alt="logo" className='w-20'></img>
-          <h1 className='logo-text'>Ghadboun group</h1>
+          <img src={logo} alt="logo" className='w-[240px]'></img>
+          
         </NavLink>
       </div>
     </div>
