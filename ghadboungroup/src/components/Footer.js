@@ -87,9 +87,9 @@ function FooterBottom({ smallScreen }) {
                 <span>Copy Right @ 2024</span>
                 {smallScreen && <span>Created with love</span>}
                 <ul className='social-media-list'>
-                    <li><i className="fa-brands fa-instagram"></i></li>
-                    <li><i className="fa-brands fa-linkedin-in"></i></li>
-                    <li><i className="fa-brands fa-facebook-f"></i></li>
+                    <li><a target='_blank' href="https://www.instagram.com/ghadboun.group?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i className="fa-brands fa-instagram"></i></a></li>
+                    <li><a target='_blank' href="https://www.tiktok.com/@ghadboungroup"><i className="fa-brands fa-tiktok"></i></a></li>
+                    <li><a target='_blank' href="https://www.facebook.com/Ghadboun.Group"><i className="fa-brands fa-facebook-f"></i></a></li>
                     <li><i className="fa-brands fa-twitter"></i></li>
                 </ul>
             </div>

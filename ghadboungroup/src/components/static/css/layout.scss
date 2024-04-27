@@ -9,7 +9,6 @@
 
 // default btn
 .default-btn {
-    margin-top: 20px;
     cursor: pointer;
     background-color: #F8780F;
     width: 120px;
@@ -17,9 +16,6 @@
     color: #fff;
     font-size: 16px;
     border: none;
-    @media (max-width: 880px){
-        margin-top: 0;
-    }
 }
 .default-btn:hover {
     background-color: #cf6712;
@@ -101,9 +97,6 @@
                 @media(min-width: 1500px){
                     font-size: 20px;
                 }
-            }
-            .active {
-                color: #F8780F;
             }
             .drop-menu{
                 .drop-link {
@@ -215,9 +208,6 @@
                         font-size: 14px;
                         color: #ffffff;
                         text-decoration: none;
-                    }
-                    .active {
-                        color: #F8780F;
                     }
                     .drop-menu {
                         width: min-content;
@@ -335,8 +325,6 @@
         color: #F8780F;
     }
 
-    
-
     #active {
         position: relative;
     }
@@ -354,5 +342,12 @@
         font-family: "Montserrat Alternates", sans-serif;
         font-weight: 600;
         color: #ffffff;
+    }
+}
+
+// Desktop menu
+.nav-wrapper {
+    #active1 {
+        color: #F8780F;
     }
 }

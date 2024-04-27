@@ -1,26 +1,28 @@
 import React, {useState} from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 import classNames from 'classnames'
 import search_icon from './static/images/search-icon.png'
 
 export default function DesktopMenu(){
   const[openDropdown, setOpenDropdown] = useState('');
+  const location = useLocation();
+  const { hash, pathname, search } = location;
 
   return (
     <>
       <NavLinks>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/" id={`${(`${pathname}${hash}` === '/') ? 'active1': ''}`}>Home</NavLink>
         <DropMenu name="Services" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown}>
-          <DropItem link="/services/#modern-fetures">Modern features</DropItem>
-          <DropItem link="/services/#post-tension">Post tension</DropItem>
+          <DropItem link="/services/#modern-fetures" path={`${pathname}${hash}`}>Modern features</DropItem>
+          <DropItem link="/services/#post-tension" path={`${pathname}${hash}`}>Post tension</DropItem>
         </DropMenu>
         <DropMenu name="Categories" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown}>
-          <DropItem link="/gallery">gallery</DropItem>
-          <DropItem link="/gallery/kitchen">Kitchen</DropItem>
-          <DropItem link="/gallery/bathroom">Bath room</DropItem>
+          <DropItem link="/gallery" path={`${pathname}${hash}`}>gallery</DropItem>
+          <DropItem link="/gallery/kitchen" path={`${pathname}${hash}`}>Kitchen</DropItem>
+          <DropItem link="/gallery/bathroom" path={`${pathname}${hash}`}>Bath room</DropItem>
         </DropMenu>
-        <NavLink to="/contactus">Contact us</NavLink>
+        <NavLink to="/contactus" id={`${(`${pathname}${hash}` === '/contactus') ? 'active1': ''}`}>Contact us</NavLink>
       </NavLinks>
       <div className='icons'>
         <NavLink to="/contactus"><i className="fa-solid fa-paper-plane"></i></NavLink>
@@ -65,7 +67,7 @@ function DropMenu(props){
 function DropItem(props){
   return (
     <div className='drop-item'>
-      <NavLink end to={props.link}>{props.children}</NavLink>
+      <NavLink end id={`${(props.path === props.link) ? 'active1': ''}`} to={props.link}>{props.children}</NavLink>
     </div>
   )
 }
