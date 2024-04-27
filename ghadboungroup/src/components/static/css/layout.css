@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+20&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --nav-height: 65px;
 }
@@ -287,4 +288,49 @@
   100% {
     height: 253px;
   }
+}
+.navbar2 .mobile-nav {
+  z-index: 9;
+  transition: transform 0.7s ease-in-out;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.navbar2 .mobile-nav2 {
+  z-index: 9;
+  transition: transform 0.7s ease-in-out;
+  transform: translateY(0%);
+  opacity: 1;
+}
+.navbar2 .mobile-nav.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+.navbar2 .mobile-nav2.close {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+.navbar2 .animate {
+  transition: transform 1.5s ease-in-out, opacity 2.2s;
+  transform: translateY(-75%);
+  opacity: 0;
+}
+.navbar2 .animate.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+.navbar2 .initial {
+  opacity: 1;
+  transition: transform 1s ease-in-out, opacity 1s;
+  transform: translateY(0);
+}
+.navbar2 .initial.close {
+  transform: translateY(-75%);
+  opacity: 0;
+}
+.navbar2 .logo-text {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 25px;
+  color: #F8780F;
 }/*# sourceMappingURL=layout.css.map */
