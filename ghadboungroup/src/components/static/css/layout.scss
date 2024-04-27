@@ -316,7 +316,7 @@
     }
     .initial {
         opacity: 1;
-        transition: transform 1s ease-in-out, opacity 1s;
+        transition: transform 0.7s ease-in-out, opacity 1s;
         transform: translateY(0);
     }
     .initial.close {
@@ -330,5 +330,28 @@
         font-style: italic;
         font-size: 25px;
         color: #F8780F;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    #active {
+        position: relative;
+    }
+    #active::after {
+        position: absolute;
+        content: "";
+        height: 2px;
+        width: 100%;
+        background-color: #fff;
+        bottom: -4px;
+        left: 0;
+    }
+
+    a, .drop-link {
+        font-family: "Montserrat Alternates", sans-serif;
+        font-weight: 600;
+        color: #ffffff;
     }
 }

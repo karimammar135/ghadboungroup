@@ -320,7 +320,7 @@
 }
 .navbar2 .initial {
   opacity: 1;
-  transition: transform 1s ease-in-out, opacity 1s;
+  transition: transform 0.7s ease-in-out, opacity 1s;
   transform: translateY(0);
 }
 .navbar2 .initial.close {
@@ -333,4 +333,24 @@
   font-style: italic;
   font-size: 25px;
   color: #F8780F;
+}
+.navbar2 .hide {
+  display: none;
+}
+.navbar2 #active {
+  position: relative;
+}
+.navbar2 #active::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  bottom: -4px;
+  left: 0;
+}
+.navbar2 a, .navbar2 .drop-link {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
 }/*# sourceMappingURL=layout.css.map */
