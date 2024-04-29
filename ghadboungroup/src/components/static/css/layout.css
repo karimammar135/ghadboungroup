@@ -299,6 +299,7 @@
 .navbar2 .mobile-nav2.close {
   transform: translateY(-100%);
   opacity: 1;
+  pointer-events: none;
 }
 .navbar2 .animate {
   transition: transform 1.5s ease-in-out, opacity 2.2s;
@@ -324,6 +325,16 @@
   font-style: italic;
   font-size: 25px;
   color: #F8780F;
+}
+.navbar2 .design {
+  opacity: 1;
+}
+.navbar2 .design.hide {
+  opacity: 0;
+  transition: opacity 2s;
+}
+.navbar2 .design.show {
+  opacity: 1;
 }
 .navbar2 #active {
   position: relative;

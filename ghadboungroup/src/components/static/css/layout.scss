@@ -296,6 +296,7 @@
     .mobile-nav2.close {
         transform: translateY(-100%);
         opacity: 1;
+        pointer-events: none;
     }
 
     .animate {
@@ -323,6 +324,17 @@
         font-style: italic;
         font-size: 25px;
         color: #F8780F;
+    }
+
+    .design {
+        opacity: 1;
+    }
+    .design.hide {
+        opacity: 0;
+        transition: opacity 2s;
+    }
+    .design.show {
+        opacity: 1;
     }
 
     #active {

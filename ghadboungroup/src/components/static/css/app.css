@@ -6,6 +6,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import 'react-loading-skeleton/dist/skeleton.css';
+
 * {
     margin: 0;
     font-family: "Outfit", sans-serif;

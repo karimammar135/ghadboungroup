@@ -51,9 +51,8 @@ export default function MobileMenu() {
           </DropMenu>
           <NavLink to="/contactus" className={classNames("block text-3xl text-white", {'hide': (expand != '')})} id={`${(`${pathname}${hash}` === '/contactus') ? 'active': ''}`} onClick={() => toggleMenu()}>Contact Us</NavLink>
         </div>
-        <NavLink className='flex flex-col justify-center items-center gap-2' id='logo-wrapper' to="/" onClick={() => toggleMenu()}>
+        <NavLink className={!isOpen ? 'design hide': 'design show'} id='logo-wrapper' to="/" onClick={() => toggleMenu()}>
           <img src={logo} alt="logo" className='w-[240px]'></img>
-          
         </NavLink>
       </div>
     </div>
