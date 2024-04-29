@@ -4,6 +4,7 @@ import './static/css/layout.css';
 import Navbar from './Navbar'
 import Footer from './Footer.js'
 import Loader from './Loader.js'
+import WhatsappUs from './Whatsappus.js'
 
 export default function AppLayout() {
   const [loader, setLoader] = useState(true)
@@ -11,7 +12,7 @@ export default function AppLayout() {
   useEffect(() => {
       let myloader = setTimeout(() => {
           setLoader(false)
-      }, 5000)
+      }, 0)
       return () => {
           clearTimeout(myloader);
       }
@@ -21,6 +22,7 @@ export default function AppLayout() {
     <div>
         {loader && <Loader />}
         <Navbar />
+        <WhatsappUs />
         <Outlet/>
         <Footer />
     </div>

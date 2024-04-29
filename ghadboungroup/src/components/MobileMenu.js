@@ -33,7 +33,7 @@ export default function MobileMenu() {
   <div className='navbar2'>
     <Icons />
     {!isOpen && <img src={bars} alt="bars" onClick={() => toggleMenu()}></img>
-    || <i className="fa-regular fa-rectangle-xmark z-10 text-3xl text-white" onClick={() => toggleMenu()}></i>}
+    || <i className="fa-regular fa-rectangle-xmark z-5 text-3xl text-white" onClick={() => toggleMenu()}></i>}
     <div className={classNames('custom-nav absolute w-screen bg-zinc-900 top-0 right-0 flex justify-center items-center', {'mobile-nav open': isOpen, 'mobile-nav2 close': !isOpen})}>
       <div className='flex flex-col justify-center items-center gap-10 absolute top-[110px]'>
         <div 

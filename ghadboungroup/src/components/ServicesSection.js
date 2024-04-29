@@ -5,6 +5,7 @@ import interior from './static/images/interior.png'
 import architecture from './static/images/architecture.png'
 import construction from './static/images/construction.png'
 import background from './static/images/IMG_7330.jpg'
+import { NavLink } from 'react-router-dom'
 
 export default function ServicesSection() {
   return (
@@ -17,7 +18,7 @@ export default function ServicesSection() {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae conse quuntur voluptatum laborum numquam blanditiis harum quis quam eius sed odit fugiat iusto fuga praesentium optio.
                     rerum provident similique accusantium nemo.
                 </p>
-                <button className='default-btn'>Our services</button>
+                <NavLink to="/services" className='default-btn flex justify-center items-center'>Our services</NavLink>
             </div>
         </div>
         <div className='bottom-container'>

@@ -7,7 +7,7 @@ import BarLoader from "react-spinners/BarLoader";
 
 export default function Loader() {
   return (
-    <section className='loader'>
+    <section className='loader z-20'>
         <div className='container'>
           <div className='logo'>
             <img src={logo} alt="logo"></img>
