@@ -4,7 +4,7 @@ import './static/css/services-section.css'
 import interior from './static/images/interior.png'
 import architecture from './static/images/architecture.png'
 import construction from './static/images/construction.png'
-import background from './static/images/IMG_7330.jpg'
+import background from '../../static/images/IMG_7301.jpg'
 import { NavLink } from 'react-router-dom'
 
 export default function ServicesSection() {

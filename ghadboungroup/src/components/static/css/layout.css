@@ -281,13 +281,13 @@
   min-height: 110vh;
 }
 .navbar2 .mobile-nav {
-  z-index: 9;
+  z-index: 4;
   transition: transform 0.7s ease-in-out;
   transform: translateY(-100%);
   opacity: 0;
 }
 .navbar2 .mobile-nav2 {
-  z-index: 9;
+  z-index: 4;
   transition: transform 0.7s ease-in-out;
   transform: translateY(0%);
   opacity: 1;

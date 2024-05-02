@@ -3,17 +3,31 @@ import React, {useEffect, useRef, useState } from 'react'
 import './static/css/mainsection.css'
 
 import { register } from 'swiper/element/bundle';
-import img1 from './static/images/img1.jpg'
-import img2 from './static/images/img2.jpg'
-import img3 from './static/images/img3.jpg'
-import img4 from './static/images/img4.jpg'
-import img5 from './static/images/img5.jpg'
-import img6 from './static/images/img6.jpg'
+import img from './static/images/2-hotel.jpg';
+
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 export default function MainSection() {
     const swiperRef = useRef(null)
     const [carousal_slides, setCarousal_slides] = useState(6)
     const [carousal_count, setCarousal_count] = useState(1)
+    const [images, setImages] = useState(null)
+
+    // Fetching images from API route
+    useEffect(() => {
+        fetchImages();
+    }, []);
+
+    async function fetchImages() {
+        try {
+            const response = await fetch('/get_images')
+            const data = await response.json()
+            setImages(data)
+            console.log('done')
+        } catch(error){
+            console.error('Error fetching data:', error);
+        }
+    }
 
     // Adding swiper parameters on mount
     useEffect(() => {
@@ -61,6 +75,7 @@ export default function MainSection() {
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
+                    background-color: '#717171';
                     scale: .7;
                     transition: scale 2s;
                 }
@@ -89,7 +104,7 @@ export default function MainSection() {
             swiperEl.swiper.slidePrev()
             setCarousal_count(prevCarousal_count => (prevCarousal_count != 1) && prevCarousal_count - 1 || carousal_slides)
         })
-    }, [])
+    }, [images])
 
     return (
         <section className='main-section'>
@@ -112,14 +127,23 @@ export default function MainSection() {
             <div className='images-container'>
                 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
                 <div className='carousal'>
-                    <swiper-container init="false" className="mySwiper" effect="coverflow" grab-cursor="true" centered-slides="true" slides-per-view="3" coverflow-effect-rotate="0" coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="0" coverflow-effect-slide-shadows="true" loop="true">
-                        <swiper-slide style={{ backgroundImage: `url(${img1})` }}></swiper-slide>
-                        <swiper-slide style={{ backgroundImage: `url(${img2})` }}></swiper-slide>
-                        <swiper-slide style={{ backgroundImage: `url(${img3})` }}></swiper-slide>
-                        <swiper-slide style={{ backgroundImage: `url(${img4})` }}></swiper-slide>
-                        <swiper-slide style={{ backgroundImage: `url(${img5})` }}></swiper-slide>
-                        <swiper-slide style={{ backgroundImage: `url(${img6})` }}></swiper-slide>
-                    </swiper-container>
+                    <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                        <swiper-container init="false" className="mySwiper" effect="coverflow" grab-cursor="true" centered-slides="true" slides-per-view="3" coverflow-effect-rotate="0" coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="0" coverflow-effect-slide-shadows="true" loop="true"> 
+                            {images != null && 
+                            images.map((image) => {
+                                    return <swiper-slide key={image.id} style={{ backgroundImage: `url(${image.image_url})` }}></swiper-slide>
+                                })
+                            || 
+                            <>
+                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
+                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
+                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
+                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
+                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
+                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
+                            </>}
+                        </swiper-container>
+                    </SkeletonTheme>
                     <div className='pagination'>
                         <div className="counter">
                             <span>{carousal_count}/</span>
