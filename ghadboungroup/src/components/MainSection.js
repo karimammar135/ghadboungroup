@@ -31,79 +31,81 @@ export default function MainSection() {
 
     // Adding swiper parameters on mount
     useEffect(() => {
-        register();
+        if (images != null){
+            register();
 
-        // get swiper elements
-        const swiperEl = document.querySelector('swiper-container');
-        const nextbtn = document.querySelector('.next')
-        const prevbtn = document.querySelector('.prev')
-        // swiper parameters
-        const swiperParams = {
-            slidesPerView: 3,
-            breakpoints: {
-            10: {
-                slidesPerView: 1.5,
-            },
-            580: {
+            // get swiper elements
+            const swiperEl = document.querySelector('swiper-container');
+            const nextbtn = document.querySelector('.next')
+            const prevbtn = document.querySelector('.prev')
+            // swiper parameters
+            const swiperParams = {
                 slidesPerView: 3,
-            },
-            },
-            on: {
-            init() {
-                // ...
-            },
-            },
-            injectStyles: [
-                `
-                :host {
-                    width: 860px;
-                    height: 470px;
-                }
-                @media (max-width: 1160px){
+                breakpoints: {
+                10: {
+                    slidesPerView: 1.5,
+                },
+                580: {
+                    slidesPerView: 3,
+                },
+                },
+                on: {
+                init() {
+                    // ...
+                },
+                },
+                injectStyles: [
+                    `
                     :host {
-                        width: 680px;
-                        height: 350px;
+                        width: 860px;
+                        height: 470px;
                     }
-                }
-                @media (max-width: 684px){
-                    :host {
-                        width: 100vw;
+                    @media (max-width: 1160px){
+                        :host {
+                            width: 680px;
+                            height: 350px;
+                        }
                     }
-                }
-                :host ::slotted(swiper-slide) {
-                    overflow: hidden;
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-color: '#717171';
-                    scale: .7;
-                    transition: scale 2s;
-                }
-                @media (max-width: 580px){
+                    @media (max-width: 684px){
+                        :host {
+                            width: 100vw;
+                        }
+                    }
                     :host ::slotted(swiper-slide) {
-                        scale: .8;
+                        overflow: hidden;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-color: '#717171';
+                        scale: .7;
+                        transition: scale 2s;
                     }
-                }
-                :host ::slotted(.swiper-slide-active) {
-                    border: 2px solid #fff;
-                    scale: 1;
-                }
-                `,
-            ],     
-        };
-        // assign all parameters to Swiper element and initialize it
-        Object.assign(swiperEl, swiperParams);
-        swiperEl.initialize();
+                    @media (max-width: 580px){
+                        :host ::slotted(swiper-slide) {
+                            scale: .8;
+                        }
+                    }
+                    :host ::slotted(.swiper-slide-active) {
+                        border: 2px solid #fff;
+                        scale: 1;
+                    }
+                    `,
+                ],     
+            };
+            // assign all parameters to Swiper element and initialize it
+            Object.assign(swiperEl, swiperParams);
+            swiperEl.initialize();
 
-        // Swiping carousal
-        nextbtn.addEventListener('click', () => {
-            swiperEl.swiper.slideNext()
-            setCarousal_count(prevCarousal_count => (prevCarousal_count !== carousal_slides) && prevCarousal_count + 1 || 1)
-        })
-        prevbtn.addEventListener('click', () => {
-            swiperEl.swiper.slidePrev()
-            setCarousal_count(prevCarousal_count => (prevCarousal_count != 1) && prevCarousal_count - 1 || carousal_slides)
-        })
+            // Swiping carousal
+            nextbtn.addEventListener('click', () => {
+                swiperEl.swiper.slideNext()
+                setCarousal_count(prevCarousal_count => (prevCarousal_count !== carousal_slides) && prevCarousal_count + 1 || 1)
+            })
+            prevbtn.addEventListener('click', () => {
+                swiperEl.swiper.slidePrev()
+                setCarousal_count(prevCarousal_count => (prevCarousal_count != 1) && prevCarousal_count - 1 || carousal_slides)
+            })
+        }
     }, [images])
 
     return (
@@ -128,21 +130,22 @@ export default function MainSection() {
                 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
                 <div className='carousal'>
                     <SkeletonTheme baseColor="#202020" highlightColor="#444">
-                        <swiper-container init="false" className="mySwiper" effect="coverflow" grab-cursor="true" centered-slides="true" slides-per-view="3" coverflow-effect-rotate="0" coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="0" coverflow-effect-slide-shadows="true" loop="true"> 
+                         
                             {images != null && 
-                            images.map((image) => {
+                            <swiper-container init="false" className="mySwiper" effect="coverflow" grab-cursor="true" centered-slides="true" slides-per-view="3" coverflow-effect-rotate="0" coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="0" coverflow-effect-slide-shadows="true" loop="true">
+                            {images.map((image) => {
                                     return <swiper-slide key={image.id} style={{ backgroundImage: `url(${image.image_url})` }}></swiper-slide>
-                                })
+                                })}
+                            </swiper-container>
                             || 
                             <>
-                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
-                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
-                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
-                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
-                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
-                                <swiper-slide><Skeleton height="100%"></Skeleton></swiper-slide>
+                            <div className='w-screen nos:w-[600px] h-[350px] mid:h-[470px] flex items-center gap-[25px]'>
+                                <div className='grow h-3/4'><Skeleton height="100%"></Skeleton></div>
+                                <div className='w-1/2 h-full'><Skeleton height="100%"></Skeleton></div>
+                                <div className='grow h-3/4'><Skeleton height="100%"></Skeleton></div>
+                            </div>
                             </>}
-                        </swiper-container>
+                       
                     </SkeletonTheme>
                     <div className='pagination'>
                         <div className="counter">
