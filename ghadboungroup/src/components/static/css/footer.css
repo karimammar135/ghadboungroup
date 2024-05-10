@@ -114,7 +114,9 @@
 .footer .main_container .recent_works div .works div {
   height: 65px;
   width: 65px;
-  background-color: #e66d0a;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .footer .footer_bottom {
   width: 100%;

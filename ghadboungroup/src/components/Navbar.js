@@ -27,7 +27,7 @@ export default function Navbar(){
   }, [])
 
   return (
-    <section className='nav-wrapper'>
+    <section className='nav-wrapper z-10'>
       <nav>
         <div className='logo'>
           <img src={logo} alt="logo"></img>

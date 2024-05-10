@@ -1,17 +1,18 @@
 import React, {useEffect, useRef, useState } from 'react'
 
 import './static/css/mainsection.css'
-
 import { register } from 'swiper/element/bundle';
-import img from './static/images/2-hotel.jpg';
-
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import { useOutletContext } from 'react-router-dom';
 
 export default function MainSection() {
     const swiperRef = useRef(null)
     const [carousal_slides, setCarousal_slides] = useState(6)
     const [carousal_count, setCarousal_count] = useState(1)
     const [images, setImages] = useState(null)
+
+    // Context
+    const [showImage, setShowImage] = useOutletContext();
 
     // Fetching images from API route
     useEffect(() => {
@@ -20,7 +21,7 @@ export default function MainSection() {
 
     async function fetchImages() {
         try {
-            const response = await fetch('/get_images')
+            const response = await fetch('/get_images/6/all/random')
             const data = await response.json()
             setImages(data)
             console.log('done')
@@ -108,6 +109,15 @@ export default function MainSection() {
         }
     }, [images])
 
+    // Show Image in details
+    async function openImage(image_id) {
+        for (let i = 0; i < images.length; i++) {
+            if(images[i].id === image_id){
+                setShowImage(images[i])
+            }
+        }
+    }
+
     return (
         <section className='main-section'>
             <div className='overlay'></div>
@@ -133,8 +143,8 @@ export default function MainSection() {
                          
                             {images != null && 
                             <swiper-container init="false" className="mySwiper" effect="coverflow" grab-cursor="true" centered-slides="true" slides-per-view="3" coverflow-effect-rotate="0" coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="0" coverflow-effect-slide-shadows="true" loop="true">
-                            {images.map((image) => {
-                                    return <swiper-slide key={image.id} style={{ backgroundImage: `url(${image.image_url})` }}></swiper-slide>
+                                {images.map((image) => {
+                                    return <swiper-slide key={image.id} style={{ backgroundImage: `url(${image.image_url})` }} onClick={() => openImage(image.id)}></swiper-slide>
                                 })}
                             </swiper-container>
                             || 

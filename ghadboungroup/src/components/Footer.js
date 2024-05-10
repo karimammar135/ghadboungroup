@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 
 import logo from './static/images/logo.png'
 import './static/css/footer.css'
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 
-export default function Footer() {
+export default function Footer({ setShowImage }) {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     const[smallScreen, setSmallScreen] = useState(false)
 
@@ -27,15 +28,42 @@ export default function Footer() {
 
     return (
         <section className='footer'>
-            <MainContainer />
+            <MainContainer setShowImage={setShowImage} />
             <FooterBottom smallScreen={smallScreen} />
         </section>
     )
 }
 
+function MainContainer({ setShowImage }) {
+    const [images, setImages] = useState(null)
 
-function MainContainer() {
+    // Fetching images from API route
+    useEffect(() => {
+        fetchImages();
+    }, []);
+
+    async function fetchImages() {
+        try {
+            const response = await fetch('/get_images/6/all/newest')
+            const data = await response.json()
+            setImages(data)
+            console.log('done')
+        } catch(error){
+            console.error('Error fetching data:', error);
+        }
+    }
+
+    // Show Image in details
+    async function openImage(image_id) {
+        for (let i = 0; i < images.length; i++) {
+            if(images[i].id === image_id){
+                setShowImage(images[i])
+            }
+        }
+    }
+
     return (
+        <SkeletonTheme baseColor="#CDCDCD" highlightColor="#EBEBEB">
         <div className='main_container'>
             <div className='description'>
                 <div className='logo'>
@@ -66,16 +94,25 @@ function MainContainer() {
                 <div>
                     <h3>Recent works</h3>
                     <section className='works'>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        {images != null && 
+                            images.map((image) => {
+                                return <div key={image.id} style={{ backgroundImage: `url(${image.image_url})` }} onClick={() => openImage(image.id)}></div>
+                            })
+                            ||
+                            <>
+                                <Skeleton height="65px" width="65px"></Skeleton>
+                                <Skeleton height="65px" width="65px"></Skeleton>
+                                <Skeleton height="65px" width="65px"></Skeleton>
+                                <Skeleton height="65px" width="65px"></Skeleton>
+                                <Skeleton height="65px" width="65px"></Skeleton>
+                                <Skeleton height="65px" width="65px"></Skeleton>
+                            </>
+                        }
                     </section>
                 </div>
             </div>
         </div>
+        </SkeletonTheme>
     )
 }
 
