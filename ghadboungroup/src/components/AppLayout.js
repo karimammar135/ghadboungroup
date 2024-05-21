@@ -10,7 +10,6 @@ import ShowImage from './ShowImage.js'
 export default function AppLayout() {
   const [loader, setLoader] = useState(true)
   const [showImage, setShowImage] = useState(false)
-  console.log(showImage)
 
   useEffect(() => {
       let myloader = setTimeout(() => {

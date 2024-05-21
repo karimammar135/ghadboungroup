@@ -24,7 +24,6 @@ export default function MainSection() {
             const response = await fetch('/get_images/6/all/random')
             const data = await response.json()
             setImages(data)
-            console.log('done')
         } catch(error){
             console.error('Error fetching data:', error);
         }

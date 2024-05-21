@@ -18,7 +18,7 @@ export default function App(){
                 <Route path="/services" element={<Services />}/>
                 <Route path="/gallery" >
                     <Route index element={<Gallery />} />
-                    <Route path=":category" element={<Gallery />} />
+                    <Route path=":category_param" element={<Gallery />} />
                 </Route>
                 <Route path="/contactus" element={<ContactUs />} />
                 <Route path="*" element={<NotFound />} />

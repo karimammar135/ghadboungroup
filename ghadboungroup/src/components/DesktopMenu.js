@@ -49,8 +49,7 @@ function DropMenu(props){
       props.setOpenDropdown(props.name);
     }
   }
-  console.log(props.openDropdown)
-
+  
   return (
     <div className='drop-menu'>
       <NavLink className="drop-link" onClick={(e) => toggleDropdown(e)}>

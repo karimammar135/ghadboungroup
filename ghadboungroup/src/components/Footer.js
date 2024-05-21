@@ -47,7 +47,6 @@ function MainContainer({ setShowImage }) {
             const response = await fetch('/get_images/6/all/newest')
             const data = await response.json()
             setImages(data)
-            console.log('done')
         } catch(error){
             console.error('Error fetching data:', error);
         }
