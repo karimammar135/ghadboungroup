@@ -48,6 +48,8 @@ export default function MobileMenu() {
               <DropItem link="/gallery" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>gallery</DropItem>
               <DropItem link="/gallery/kitchen" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Kitchen</DropItem>
               <DropItem link="/gallery/bathroom" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Bath room</DropItem>
+              <DropItem link="/gallery/bedroom" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Bed room</DropItem>
+              <DropItem link="/gallery/exterior" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Exterior</DropItem>
           </DropMenu>
           <NavLink to="/contactus" className={classNames("block text-3xl text-white", {'hide': (expand != '')})} id={`${(`${pathname}${hash}` === '/contactus') ? 'active': ''}`} onClick={() => toggleMenu()}>Contact Us</NavLink>
         </div>

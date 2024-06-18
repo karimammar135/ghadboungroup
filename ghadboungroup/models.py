@@ -18,7 +18,7 @@ class Item(models.Model):
     image = models.ImageField(upload_to='ghadboungroup/static/images', blank=True)
     description = models.TextField(blank=True)
     category = models.CharField(choices=CATEGORIES, default='KITCHEN')
-    created_date = models.DateTimeField('date created', default=timezone.now)
+    created_at = models.DateTimeField('date created', default=timezone.now)
 
     def __str__(self):
         return f"image:{self.image} description:{self.description} category: {self.category}"
@@ -29,5 +29,5 @@ class Item(models.Model):
             "image_url": f"../../static/images/{(self.image.url)[29:]}",
             "description": self.description,
             "category": self.category,
-            "created_date": self.created_date
+            "created_at": self.created_at
         }

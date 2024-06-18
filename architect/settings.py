@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'architect.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'a5fEe*GcF-DFe53gf4CG6*B-216Fga6d',
-        'HOST': 'monorail.proxy.rlwy.net',
-        'PORT': '22256',
+        'NAME': 'postgres',
+        'USER': 'postgres.bnvfbvgeeouvnhjblega',
+        'PASSWORD': 'btejrGPnBMOphHkw',
+        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
+        'PORT': '5432',
     }
 }
 

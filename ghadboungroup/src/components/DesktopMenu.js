@@ -21,6 +21,8 @@ export default function DesktopMenu(){
           <DropItem link="/gallery" path={`${pathname}${hash}`}>gallery</DropItem>
           <DropItem link="/gallery/kitchen" path={`${pathname}${hash}`}>Kitchen</DropItem>
           <DropItem link="/gallery/bathroom" path={`${pathname}${hash}`}>Bath room</DropItem>
+          <DropItem link="/gallery/bedroom" path={`${pathname}${hash}`}>Bed room</DropItem>
+          <DropItem link="/gallery/exterior" path={`${pathname}${hash}`}>Exterior</DropItem>
         </DropMenu>
         <NavLink to="/contactus" id={`${(`${pathname}${hash}` === '/contactus') ? 'active1': ''}`}>Contact us</NavLink>
       </NavLinks>

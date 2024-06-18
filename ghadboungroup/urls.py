@@ -8,4 +8,5 @@ urlpatterns = [
     # API Routes
     path('get_images/<int:limit>/<str:category>/<str:order>', views.get_images, name='get_images'),
     path('get_image/<int:id>', views.get_image, name='get_image'),
+    path('gallery_pagination', views.gallery_pagination, name="gallery_pagination"),
 ]
