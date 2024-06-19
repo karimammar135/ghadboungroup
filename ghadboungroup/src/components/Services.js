@@ -36,7 +36,7 @@ export default function Sevices() {
             <h2 className='text-2xl'>Furniture</h2>
             <p className='text-1xl text-[#747474] open-sans'>Architecture is an amazing technique that is used to develop your house in a very organied way</p>
           </div>
-          <div className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
+          <div id="post-tension" className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
             <img src={post_tension}></img>
             <h2 className='text-2xl'>Post-Tension concrete</h2>
             <p className='text-1xl text-[#747474] open-sans'>Architecture is an amazing technique that is used to develop your house in a very organied way</p>

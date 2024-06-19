@@ -39,7 +39,7 @@ export default function MobileMenu() {
         <div 
             className={`flex flex-col justify-center items-center gap-10 ${isOpen ? 'animate open': 'initial close'}`}
         >
-          <NavLink to="/" className={classNames("block text-3xl text-white", {'hide': (expand != '')})} id={`${(`${pathname}${hash}` === '/') ? 'active': ''}`} onClick={() => toggleMenu()}>Home</NavLink>
+          <NavLink onClick={() => {toggleMenu(); window.scrollTo(0, 0)}} to="/" className={classNames("block text-3xl text-white", {'hide': (expand != '')})} id={`${(`${pathname}${hash}` === '/') ? 'active': ''}`}>Home</NavLink>
           <DropMenu name="Services" className="block text-3xl text-white" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} expand={expand} setExpand={setExpand}>
               <DropItem link="/services/#modern-fetures" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Modern features</DropItem>
               <DropItem link="/services/#post-tension" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Post tension</DropItem>
@@ -51,7 +51,7 @@ export default function MobileMenu() {
               <DropItem link="/gallery/bedroom" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Bed room</DropItem>
               <DropItem link="/gallery/exterior" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Exterior</DropItem>
           </DropMenu>
-          <NavLink to="/contactus" className={classNames("block text-3xl text-white", {'hide': (expand != '')})} id={`${(`${pathname}${hash}` === '/contactus') ? 'active': ''}`} onClick={() => toggleMenu()}>Contact Us</NavLink>
+          <NavLink onClick={() => {toggleMenu(); window.scrollTo(0, 0)}} to="/contactus" className={classNames("block text-3xl text-white", {'hide': (expand != '')})} id={`${(`${pathname}${hash}` === '/contactus') ? 'active': ''}`}>Contact Us</NavLink>
         </div>
         <NavLink className={!isOpen ? 'design hide': 'design show'} id='logo-wrapper' to="/" onClick={() => toggleMenu()}>
           <img src={logo} alt="logo" className='w-[240px]'></img>
@@ -90,7 +90,7 @@ function DropMenu(props){
 function DropItem(props){
   return (
     <div className='drop-item'>
-      <NavLink end id={`${(props.path === props.link) ? 'active': ''}`} className="text-2xl text-white" to={props.link} onClick={() => props.toggleMenu()}>{props.children}</NavLink>
+      <NavLink end id={`${(props.path === props.link) ? 'active': ''}`} className="text-2xl text-white" to={props.link} onClick={() => {props.toggleMenu(); window.scrollTo(0, 0)}}>{props.children}</NavLink>
     </div>
   )
 }

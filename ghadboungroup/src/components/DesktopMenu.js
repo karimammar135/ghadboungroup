@@ -12,7 +12,7 @@ export default function DesktopMenu(){
   return (
     <>
       <NavLinks>
-        <NavLink to="/" id={`${(`${pathname}${hash}` === '/') ? 'active1': ''}`}>Home</NavLink>
+        <NavLink to="/" onClick={() => window.scrollTo(0, 0)} id={`${(`${pathname}${hash}` === '/') ? 'active1': ''}`}>Home</NavLink>
         <DropMenu name="Services" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown}>
           <DropItem link="/services/#modern-fetures" path={`${pathname}${hash}`}>Modern features</DropItem>
           <DropItem link="/services/#post-tension" path={`${pathname}${hash}`}>Post tension</DropItem>
@@ -24,10 +24,10 @@ export default function DesktopMenu(){
           <DropItem link="/gallery/bedroom" path={`${pathname}${hash}`}>Bed room</DropItem>
           <DropItem link="/gallery/exterior" path={`${pathname}${hash}`}>Exterior</DropItem>
         </DropMenu>
-        <NavLink to="/contactus" id={`${(`${pathname}${hash}` === '/contactus') ? 'active1': ''}`}>Contact us</NavLink>
+        <NavLink to="/contactus" onClick={() => window.scrollTo(0, 0)} id={`${(`${pathname}${hash}` === '/contactus') ? 'active1': ''}`}>Contact us</NavLink>
       </NavLinks>
       <div className='icons'>
-        <NavLink to="/contactus"><i className="fa-solid fa-paper-plane"></i></NavLink>
+        <NavLink to="/contactus" onClick={() => window.scrollTo(0, 0)}><i className="fa-solid fa-paper-plane"></i></NavLink>
         <img src={search_icon} alt="search"></img>
       </div>
     </>
@@ -54,7 +54,7 @@ function DropMenu(props){
   
   return (
     <div className='drop-menu'>
-      <NavLink className="drop-link" onClick={(e) => toggleDropdown(e)}>
+      <NavLink className="drop-link" onClick={(e) => {toggleDropdown(e); window.scrollTo(0, 0)}}>
         {props.name}
         <i className={classNames("fa-solid fa-angle-down", {'flip-arrow': (props.openDropdown === props.name)})}></i>
       </NavLink>
@@ -68,7 +68,7 @@ function DropMenu(props){
 function DropItem(props){
   return (
     <div className='drop-item'>
-      <NavLink end id={`${(props.path === props.link) ? 'active1': ''}`} to={props.link}>{props.children}</NavLink>
+      <NavLink end onClick={() => window.scrollTo(0, 0)} id={`${(props.path === props.link) ? 'active1': ''}`} to={props.link}>{props.children}</NavLink>
     </div>
   )
 }

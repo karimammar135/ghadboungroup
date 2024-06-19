@@ -7,7 +7,7 @@ import GalleryImages from './GalleryImages'
 import Pagination from './Pagination'
 
 const categories = {
-  'all': '',
+  'all': 'Gallery',
   'KITCHEN': 'Kitchen',
   'LIVINGROOM': 'Living Room',
   'BATHROOM': 'Bath Room',
@@ -142,7 +142,7 @@ export default function Gallery() {
 
   return (
     <section>
-      <TopSection header={`Gallery ${categories[category]}`} />
+      <TopSection header={`${categories[category]}`} />
     
       <div className='flex flex-col justify-center items-center pt-[50px] pb-[30px]'>
         <div className='flex flex-col justify-center items-center gap-[20px] max-w-[80%]'>

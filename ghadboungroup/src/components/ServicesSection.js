@@ -18,7 +18,7 @@ export default function ServicesSection() {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae conse quuntur voluptatum laborum numquam blanditiis harum quis quam eius sed odit fugiat iusto fuga praesentium optio.
                     rerum provident similique accusantium nemo.
                 </p>
-                <NavLink to="/services" className='default-btn flex justify-center items-center'>Our services</NavLink>
+                <NavLink to="/services" onClick={() => window.scrollTo(0, 0)} className='default-btn flex justify-center items-center'>Our services</NavLink>
             </div>
         </div>
         <div className='bottom-container'>
