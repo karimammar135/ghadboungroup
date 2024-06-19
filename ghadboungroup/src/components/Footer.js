@@ -61,6 +61,8 @@ function MainContainer({ setShowImage }) {
         }
     }
 
+    // Scroll to a specific section
+    
     return (
         <SkeletonTheme baseColor="#CDCDCD" highlightColor="#EBEBEB">
         <div className='main_container'>
@@ -83,7 +85,7 @@ function MainContainer({ setShowImage }) {
             <div className='links'>
                 <h3>About us</h3>
                 <ul>
-                    <li>About us</li>
+                    <li>Email</li>
                     <li>Phone number</li>
                     <li>Location</li>
                     <li>Contact</li>

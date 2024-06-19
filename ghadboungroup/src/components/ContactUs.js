@@ -6,8 +6,9 @@ import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
 export default function ContactUS() {
   return (
     <SkeletonTheme baseColor="#313131" highlightColor="#525252">
-      <section className=''>
+      <section className='' id="contactus">
         <TopSection header="Contact us"/>
+        <Info />
         <div className='flex justify-center items-center pl-[20px] pr-[20px] pt-[60px] pb-[60px]'>
           <div className='w-full max-w-[1245px] sm:w-4/5 flex flex-col items-center gap-[10px]'>
             <h2 className='font-semibold text-3xl sm:text-4xl text-center'>Find us on google maps</h2>
@@ -17,5 +18,33 @@ export default function ContactUS() {
         </div>
       </section>
     </SkeletonTheme>
+  )
+}
+
+function Info(){
+  return (
+    <div className='w-full bg-[#7474740e] flex items-center justify-center p-[50px]'>
+        <div className='flex flex-col gap-[10px]'>
+          <div className='flex flex-col items-center gap-[10px] p-[15px] pr-[25px]'>
+            <Component head="Phone number" details="+961 71 351 678 /  78 974 151" icon={<i className="fa-solid fa-phone text-[#F8780F]"></i>}/>
+            <Component head="Email address" details="ghadboungroup.leb@gmail.com" icon={<i className="fa-solid fa-envelopes-bulk text-[#F8780F]"></i>}/>
+            <Component head="Location" details="Qana, South Lebanon" icon={<i className="fa-solid fa-location-dot text-[#F8780F]"></i>}/>
+          </div>
+        </div>
+    </div>
+  )
+}
+
+function Component( props ){
+  return (
+    <div className='flex items-center gap-[10px] w-full bg-white rounded p-[15px] pr-[25px]'>
+      <div className='w-[50px] h-[50px] flex items-center justify-center rounded-full bg-[#f8780f33]'>
+        {props.icon}
+      </div>
+      <div className='flex flex-col gap-[0px]'>
+        <h3 className='text-[14px] font-semibold text-black'>{props.head}</h3>
+        <span className='text-[12px] text-[#A3A3A3]'>{props.details}</span>
+      </div>
+    </div>
   )
 }
