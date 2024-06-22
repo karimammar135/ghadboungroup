@@ -3,7 +3,7 @@ import React, {useEffect, useRef, useState } from 'react'
 import './static/css/mainsection.css'
 import { register } from 'swiper/element/bundle';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, NavLink } from 'react-router-dom';
 
 export default function MainSection() {
     const swiperRef = useRef(null)
@@ -135,7 +135,7 @@ export default function MainSection() {
                     </ul>
                     <div className='text'>
                         <h1>Design Your Space For Living</h1>
-                        <button className='default-btn'>Take a Look</button>
+                        <NavLink to="gallery" className='default-btn'>Take a Look</NavLink>
                     </div>
                 </div>
             </div>

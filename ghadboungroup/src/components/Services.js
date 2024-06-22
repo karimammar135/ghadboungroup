@@ -16,7 +16,7 @@ export default function Sevices() {
     <section>
       <TopSection header="Services"/>
 
-      <div className='w-full flex flex-col items-center gap-[40px] sm:gap-[50px] mt-[60px] mb-[60px] pr-[15px] pl-[15px] sm:pr-[25px] sm:pl-[25px]' id="modern-features">
+      <div id="modern-features"  className='w-full flex flex-col items-center gap-[40px] sm:gap-[50px] mt-[60px] mb-[60px] pr-[15px] pl-[15px] sm:pr-[25px] sm:pl-[25px]'>
         <div className='flex flex-col items-center gap-5'>
           <span className='uppercase text-primary font-medium text-sm tracking-[4px]'>Our Services</span>
           <h1 className='capitalize text-4xl font-semibold text-center'>Best services by ghadboun group</h1>
@@ -25,6 +25,7 @@ export default function Sevices() {
         </div>
 
         <ModernFeatures />
+
         <InfoSection />
       </div>
     </section>
@@ -33,13 +34,13 @@ export default function Sevices() {
 
 function ModernFeatures(){
   return (
-    <div id="modern-features" className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-11/12'>
-      <div className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-11/12'>
+      <div id="architecture" className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
         <img src={architecture}></img>
         <h2 className='text-2xl'>Architecture</h2>
         <p className='text-1xl text-[#747474] open-sans'>Architecture is an amazing technique that is used to develop your house in a very organied way</p>
       </div>
-      <div className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
+      <div id='interior-exterior' className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
         <img src={interior_exterior}></img>
         <h2 className='text-2xl'>Interior & Exterior</h2>
         <p className='text-1xl text-[#747474] open-sans'>Architecture is an amazing technique that is used to develop your house in a very organied way</p>
@@ -49,7 +50,7 @@ function ModernFeatures(){
         <h2 className='text-2xl'>Furniture</h2>
         <p className='text-1xl text-[#747474] open-sans'>Architecture is an amazing technique that is used to develop your house in a very organied way</p>
       </div>
-      <div id="post-tension" className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
+      <div className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
         <img src={post_tension}></img>
         <h2 className='text-2xl'>Post-Tension concrete</h2>
         <p className='text-1xl text-[#747474] open-sans'>Architecture is an amazing technique that is used to develop your house in a very organied way</p>
@@ -87,7 +88,7 @@ function InfoSection(){
               <h3 className='text-[24px] mb-[10px]'>Finishes</h3>
               <p className='text-[16px] text-[#4F4F4F] font-light'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </p>
             </div>
-            <div className='mb-[20px]'>
+            <div id='post-tension' className='mb-[20px]'>
               <h3 className='text-[24px] mb-[10px]'>Post-Tension Concrete</h3>
               <div style={{ backgroundImage: `url(${post_tensioning})` }} className='w-full h-[300px] nos:h-[350px] vl:h-[450px] mb-[10px] bg-cover bg-no-repeat bg-center rounded-md'></div>
               <p className='text-[16px] text-[#4F4F4F] font-light'> Ghadboun grroup uses Post-tensioning which is the most modern and up to date method used in constructions. Post-tensioning is a method of reinforcing (strengthening) concrete or other materials with high-strength steel strands or bars, typically referred to as tendons..</p>

@@ -22,7 +22,6 @@ export default function MobileMenu() {
     setOpenDropdown(''); 
   }, [isOpen])
   // end new
-  console.log(`${pathname}${hash}`)
 
   function toggleMenu(){
     setExpand('')

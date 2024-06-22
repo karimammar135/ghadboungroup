@@ -16,6 +16,9 @@
     color: #fff;
     font-size: 16px;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .default-btn:hover {
     background-color: #cf6712;

@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react'
 import logo from './static/images/logo.png'
 import './static/css/footer.css'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import { useNavigate, useLocation } from 'react-router-dom'
 
-export default function Footer({ setShowImage }) {
+export default function Footer({ setShowImage, scrollTo }) {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     const[smallScreen, setSmallScreen] = useState(false)
 
@@ -28,13 +29,13 @@ export default function Footer({ setShowImage }) {
 
     return (
         <section className='footer'>
-            <MainContainer setShowImage={setShowImage} />
+            <MainContainer setShowImage={setShowImage} scrollTo={scrollTo} />
             <FooterBottom smallScreen={smallScreen} />
         </section>
     )
 }
 
-function MainContainer({ setShowImage }) {
+function MainContainer({ setShowImage, scrollTo }) {
     const [images, setImages] = useState(null)
 
     // Fetching images from API route
@@ -60,8 +61,6 @@ function MainContainer({ setShowImage }) {
             }
         }
     }
-
-    // Scroll to a specific section
     
     return (
         <SkeletonTheme baseColor="#CDCDCD" highlightColor="#EBEBEB">
@@ -76,19 +75,19 @@ function MainContainer({ setShowImage }) {
             <div className='links'>
                 <h3>Service</h3>
                 <ul>
-                    <li>Interior design</li>
-                    <li>Architecture design</li>
-                    <li>Construction & biulding</li>
-                    <li>Post tension</li>
+                    <li onClick={() => scrollTo('services', 'modern-features', 'start')}>Modern features</li>
+                    <li onClick={() => scrollTo('services', 'architecture')}>Architecture design</li>
+                    <li onClick={() => scrollTo('services', 'interior-exterior')}>Interior design</li>
+                    <li onClick={() => scrollTo('services', 'post-tension')}>Post tension</li>
                 </ul>
             </div>
             <div className='links'>
                 <h3>About us</h3>
                 <ul>
-                    <li>Email</li>
-                    <li>Phone number</li>
-                    <li>Location</li>
-                    <li>Contact</li>
+                    <li onClick={() => scrollTo('contactus', 'email')}>Email</li>
+                    <li onClick={() => scrollTo('contactus', 'phone_number')}>Phone number</li>
+                    <li onClick={() => scrollTo('contactus', 'location')}>Location</li>
+                    <li onClick={() => scrollTo('contactus', 'address')}>Address</li>
                 </ul>
             </div>
             <div className='recent_works'>

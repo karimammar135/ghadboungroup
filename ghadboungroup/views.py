@@ -29,31 +29,31 @@ def get_images(request, limit, category, order):
         if category == 'all':
             if limit == 0:
                 if order =='newest':
-                    items = Item.objects.all().order_by('created_at')
-                elif order == 'oldest':
                     items = Item.objects.all().order_by('-created_at')
+                elif order == 'oldest':
+                    items = Item.objects.all().order_by('created_at')
                 elif order == 'random':
                     items = random.sample(list(Item.objects.all()))
             else:
                 if order =='newest':
-                    items = Item.objects.all().order_by('created_at')[:limit]
-                elif order == 'oldest':
                     items = Item.objects.all().order_by('-created_at')[:limit]
+                elif order == 'oldest':
+                    items = Item.objects.all().order_by('created_at')[:limit]
                 elif order == 'random':
                     items = random.sample(list(Item.objects.all()), limit)
         else:
             if limit == 0:
                 if order =='newest':
-                    items = Item.objects.filter(category=category).order_by('created_at')
-                elif order == 'oldest':
                     items = Item.objects.filter(category=category).order_by('-created_at')
+                elif order == 'oldest':
+                    items = Item.objects.filter(category=category).order_by('created_at')
                 elif order == 'random':
                     items = random.sample(list(Item.objects.filter(category=category)))
             else:
                 if order =='newest':
-                    items = Item.objects.filter(category=category).order_by('created_at')[:limit]
-                elif order == 'oldest':
                     items = Item.objects.filter(category=category).order_by('-created_at')[:limit]
+                elif order == 'oldest':
+                    items = Item.objects.filter(category=category).order_by('created_at')[:limit]
                 elif order == 'random':
                     items = random.sample(list(Item.objects.filter(category=category)), limit)
     except ValueError:
@@ -90,11 +90,6 @@ def gallery_pagination(request):
     page_size = int(request.GET.get('pageSize'))
     is_next = True
     is_prev = True
-
-    print(f"previous page: {before}")
-    print(f"next Page: {after}")
-    print(f"isNext: {is_next}")
-    print(f"isPrev: {is_prev}")
 
     # Check for null values
     if after == 'null':

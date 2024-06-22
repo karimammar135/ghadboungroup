@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, useNavigate } from 'react-router-dom'
 import './static/css/layout.css';
 import Navbar from './Navbar'
 import Footer from './Footer.js'
@@ -10,7 +10,8 @@ import ShowImage from './ShowImage.js'
 export default function AppLayout() {
   const [loader, setLoader] = useState(true)
   const [showImage, setShowImage] = useState(false)
-
+  const navigate = useNavigate()
+  
   useEffect(() => {
       let myloader = setTimeout(() => {
           setLoader(false)
@@ -20,6 +21,20 @@ export default function AppLayout() {
       }
   }, [])
 
+  // Scroll to a specific section
+  const scrollTo = (router, location, postion) => {
+    navigate(`${router}`, {}) 
+    if (postion === undefined){
+      postion = 'center'
+    }
+    
+    let timer = setTimeout(() => {
+      document.getElementById(`${location}`).scrollIntoView({ behavior: 'smooth', block: `${postion}` })
+      clearTimeout(timer)
+    }, 200)
+  
+  }
+
   return (
     <div>
         {loader && <Loader />}
@@ -27,7 +42,7 @@ export default function AppLayout() {
         <Navbar />
         <WhatsappUs />
         <Outlet context={[ showImage, setShowImage ]}/>
-        <Footer setShowImage={setShowImage}/>
+        <Footer setShowImage={setShowImage} scrollTo={scrollTo}/>
     </div>
   )
 }
