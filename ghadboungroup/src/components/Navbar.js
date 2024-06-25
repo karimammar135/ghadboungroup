@@ -4,7 +4,7 @@ import logo from './static/images/logo.png'
 import MobileMenu from './MobileMenu'
 import DesktopMenu from './DesktopMenu'
 
-export default function Navbar(){
+export default function Navbar({ scrollTo }){
   const[screenWidth, setScreenWidth] = useState(window.innerWidth)
   const[smallScreen, setSmallScreen] = useState(false);
 
@@ -33,7 +33,7 @@ export default function Navbar(){
           <img src={logo} alt="logo"></img>
           <h1>Ghadboun group</h1>
         </div>
-        {!smallScreen && <DesktopMenu /> || <MobileMenu />}
+        {!smallScreen && <DesktopMenu scrollTo={scrollTo} /> || <MobileMenu scrollTo={scrollTo} />}
       </nav>
     </section>
   )

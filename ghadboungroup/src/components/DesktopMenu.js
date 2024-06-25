@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useOutletContext } from 'react-router-dom'
 
 import classNames from 'classnames'
 import search_icon from './static/images/search-icon.png'
 
-export default function DesktopMenu(){
+export default function DesktopMenu({ scrollTo }){
   const[openDropdown, setOpenDropdown] = useState('');
   const location = useLocation();
   const { hash, pathname, search } = location;
@@ -14,8 +14,12 @@ export default function DesktopMenu(){
       <NavLinks>
         <NavLink to="/" onClick={() => window.scrollTo(0, 0)} id={`${(`${pathname}${hash}` === '/') ? 'active1': ''}`}>Home</NavLink>
         <DropMenu name="Services" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown}>
-          <DropItem link="/services/#modern-fetures" path={`${pathname}${hash}`}>Modern features</DropItem>
-          <DropItem link="/services/#post-tension" path={`${pathname}${hash}`}>Post tension</DropItem>
+          <div className='drop-item'>
+            <NavLink to="/services/#modern-fetures" onClick={() => scrollTo('services', 'modern-features', 'start')} id={`${(`${pathname}${hash}` === "/services/#modern-fetures") ? 'active1': ''}`}>Modern Features</NavLink>
+          </div>
+          <div className='drop-item'>
+            <NavLink to="/services/#post-tension" onClick={() => scrollTo('services', 'post-tension')} id={`${(`${pathname}${hash}` === "/services/#post-tension") ? 'active1': ''}`}>Post tension</NavLink>
+          </div>
         </DropMenu>
         <DropMenu name="Categories" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown}>
           <DropItem link="/gallery" path={`${pathname}${hash}`}>gallery</DropItem>

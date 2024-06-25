@@ -6,7 +6,7 @@ import bars from './static/images/bars.png'
 import search_icon from './static/images/search-icon.png'
 import logo from './static/images/logo-design.png'
   
-export default function MobileMenu() {
+export default function MobileMenu({ scrollTo }) {
   const [expand, setExpand] = useState('')
   const location = useLocation();
   const { hash, pathname, search } = location;
@@ -40,8 +40,12 @@ export default function MobileMenu() {
         >
           <NavLink onClick={() => {toggleMenu(); window.scrollTo(0, 0)}} to="/" className={classNames("block text-3xl text-white", {'hide': (expand != '')})} id={`${(`${pathname}${hash}` === '/') ? 'active': ''}`}>Home</NavLink>
           <DropMenu name="Services" className="block text-3xl text-white" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} expand={expand} setExpand={setExpand}>
-              <DropItem link="/services/#modern-fetures" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Modern features</DropItem>
-              <DropItem link="/services/#post-tension" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Post tension</DropItem>
+              <div className='drop-item'>
+                <NavLink end id={`${(`${pathname}${hash}` === "/services/#modern-fetures") ? 'active': ''}`} className="text-2xl text-white" to="/services/#modern-fetures" onClick={() => {toggleMenu(); scrollTo('services', 'modern-features', 'start')}}>Modern features</NavLink>
+              </div>
+              <div className='drop-item'>
+                <NavLink end id={`${(`${pathname}${hash}` === "/services/#post-tension") ? 'active': ''}`} className="text-2xl text-white" to="/services/#post-tension" onClick={() => {toggleMenu(); scrollTo('services', 'post-tension')}}>Post tension</NavLink>
+              </div>
           </DropMenu>
           <DropMenu name="Categories" className="block text-3xl text-white" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} expand={expand} setExpand={setExpand}>
               <DropItem link="/gallery" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>gallery</DropItem>

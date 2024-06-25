@@ -39,7 +39,7 @@ export default function AppLayout() {
     <div>
         {loader && <Loader />}
         {showImage && <ShowImage image={showImage} setShowImage={setShowImage}/>}
-        <Navbar />
+        <Navbar scrollTo={scrollTo}/>
         <WhatsappUs />
         <Outlet context={[ showImage, setShowImage ]}/>
         <Footer setShowImage={setShowImage} scrollTo={scrollTo}/>

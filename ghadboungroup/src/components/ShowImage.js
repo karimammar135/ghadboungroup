@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { NavLink } from 'react-router-dom'
+
 const categories = {
   'KITCHEN': 'Kitchen',
   'LIVINGROOM': 'Living Room',
@@ -18,7 +20,7 @@ export default function ShowImage({ image, setShowImage }) {
         <img src={image.image_url} className='max-h-[70vh]'></img>
         <h1 className='text-white text-4xl font-light'>{categories[image.category]}</h1>
       </div>
-      <a className='default-btn flex items-center justify-center mb-10'>Discover all</a>
+      <NavLink to={`gallery/${image.category}`} onClick={() => setShowImage(false)} className='default-btn flex items-center justify-center mb-10'>Discover all</NavLink>
     </div>
   )
 }
