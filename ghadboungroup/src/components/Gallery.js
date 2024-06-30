@@ -148,8 +148,7 @@ export default function Gallery() {
         <div className='flex flex-col justify-center items-center gap-[20px] max-w-[80%]'>
           <span className='text-primary uppercase'>Latest Projects</span>
           <h1 className='text-3xl font-bold'>Modern {categories[category] != '' && categories[category] || 'Works'}</h1>
-          <p className='text-[#747474] text-center'>LLorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi 
-            repudiandae consequuntur voluptatum laborum</p>
+          <p className='text-[#747474] text-center'>Step into a world of contemporary creativity at our modern gallery</p>
         </div>
 
         <GalleryImages images={images} loading={loading} openImage={openImage} pageSize={pageSize}/>

@@ -15,8 +15,7 @@ export default function ServicesSection() {
             <div className='image' style={{ backgroundImage: `url('${background}')` }}></div>
             <div className='text-container'>
                 <h1>Services provided by us</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae conse quuntur voluptatum laborum numquam blanditiis harum quis quam eius sed odit fugiat iusto fuga praesentium optio.
-                    rerum provident similique accusantium nemo.
+                <p>Ghadboun Group provides exceptional construction services, including architecture and interior design. Utilizing modern features like Post-Tension concrete and 3D modeling, we deliver innovative, high-quality projects.
                 </p>
                 <NavLink to="/services" onClick={() => window.scrollTo(0, 0)} className='default-btn flex justify-center items-center'>Our services</NavLink>
             </div>
@@ -25,23 +24,19 @@ export default function ServicesSection() {
             <div className='service'>
                 <img src={interior} alt='interior'></img>
                 <h1>Interior design</h1>
-                <p>Lorem ipsum dolor sit amet cons ectetur adipisicing elit. Maxime moll itia, molestiae quas vel sint commodi repudiandae conse
-                    quuntur voluptatum labor
+                <p>Ghadboun Group's interior design transforms spaces with modern aesthetics, personalized touches, and functional layouts, creating elegant, inviting, and practical environments
                 </p>
             </div>
             <div className='service'>
                 <img src={architecture} alt='architecture'></img>
                 <h1>Architecture design</h1>
-                <p>Lorem ipsum dolor sit amet cons ectetur adip elit. Maxime moll itia, molestiae quas vel 
-                    sint c di repudiandae conse qu
-                    untur voluptatum labor
+                <p>Ghadboun Group excels in innovative architecture, creating iconic structures with sustainable designs, blending aesthetics and functionality to redefine urban landscapes
                 </p>
             </div>
             <div className='service'>
                 <img src={construction} alt='construction'></img>
                 <h1>Building construction</h1>
-                <p>Lorem ipsum dolor sit amet cons ectetur adipisicing elit. Maxime moll itia, molestiae quas vel sint commodi repudiandae conse
-                    quuntur voluptatum labor
+                <p>Ghadboun Group's building construction services ensure quality, efficiency, and durability, delivering projects on time with innovative techniques and exceptional craftsmanship
                 </p>
             </div>
         </div>

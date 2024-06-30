@@ -70,7 +70,7 @@ function MainContainer({ setShowImage, scrollTo }) {
                     <img src={logo} alt="logo"></img>
                     <h1>Ghadboun group</h1>
                 </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <p>Innovative construction, architecture, and interior design solutions.</p>
             </div>
             <div className='links'>
                 <h3>Service</h3>

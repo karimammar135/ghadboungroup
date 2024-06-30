@@ -20,8 +20,7 @@ export default function Sevices() {
         <div className='flex flex-col items-center gap-5'>
           <span className='uppercase text-primary font-medium text-sm tracking-[4px]'>Our Services</span>
           <h1 className='capitalize text-4xl font-semibold text-center'>Best services by ghadboun group</h1>
-          <p className='text-[#747474] max-w-[740px] 2xl:max-w-full text-center font-light'>LLorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi 
-              repudiandae consequuntur voluptatum laborum</p>
+          <p className='text-[#747474] max-w-[740px] 2xl:max-w-full text-center font-light'>Experience unparalleled excellence in construction, architecture, and interior design with Ghadboun Group's cutting-edge technology and innovative solutions.</p>
         </div>
 
         <ModernFeatures />
@@ -38,27 +37,27 @@ function ModernFeatures(){
       <div id="architecture" className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
         <img src={architecture}></img>
         <h2 className='text-2xl'>Architecture</h2>
-        <p className='text-1xl text-[#747474] open-sans'>Architecture is an amazing technique that is used to develop your house in a very organied way</p>
+        <p className='text-1xl text-[#747474] open-sans'>Creating iconic structures with sustainable designs, blending aesthetics and functionality to redefine urban landscapes</p>
       </div>
       <div id='interior-exterior' className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
         <img src={interior_exterior}></img>
         <h2 className='text-2xl'>Interior & Exterior</h2>
-        <p className='text-1xl text-[#747474] open-sans'>Architecture is an amazing technique that is used to develop your house in a very organied way</p>
+        <p className='text-1xl text-[#747474] open-sans'>Transform spaces with modern aesthetics, personalized touches, and functional layouts, creating elegant, inviting, and practical environments</p>
       </div>
       <div className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
         <img src={furniture}></img>
         <h2 className='text-2xl'>Furniture</h2>
-        <p className='text-1xl text-[#747474] open-sans'>Architecture is an amazing technique that is used to develop your house in a very organied way</p>
+        <p className='text-1xl text-[#747474] open-sans'>Crafting bespoke furniture with exceptional craftsmanship, innovative designs, and high-quality materials for timeless elegance and comfort</p>
       </div>
       <div className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
         <img src={post_tension}></img>
         <h2 className='text-2xl'>Post-Tension concrete</h2>
-        <p className='text-1xl text-[#747474] open-sans'>Architecture is an amazing technique that is used to develop your house in a very organied way</p>
+        <p className='text-1xl text-[#747474] open-sans'>Enhancing strength, flexibility, and efficiency in construction projects</p>
       </div>
       <div className='rounded-[5px] border-[1.5px] border-primary p-[25px] flex flex-col items-start gap-[10px]'>
         <img src={modeling}></img>
         <h2 className='text-2xl'>3D Modeling</h2>
-        <p className='text-1xl text-[#747474] open-sans'>Architecture is an amazing technique that is used to develop your house in a very organied way</p>
+        <p className='text-1xl text-[#747474] open-sans'>Visualizing designs with precision, creativity, and enhanced detail, that can be viewed by our client before building</p>
       </div>
     </div>
   )
@@ -74,19 +73,19 @@ function InfoSection(){
           <div className=''>
             <div className='flex flex-col gap-[10px] mb-[20px]'>
               <h3 className='text-[24px]'>Conception </h3>
-              <p className='text-[16px] text-[#4F4F4F] font-light'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <p className='text-[16px] text-[#4F4F4F] font-light'>Ghadboun Group's project conception phase involves innovative brainstorming, detailed design development, and client collaboration to create visionary, functional, and aesthetically pleasing concepts.</p>
             </div>
             <div className='mb-[20px]'>
               <h3 className='text-[24px] mb-[10px]'>Zoning and Planning</h3>
-              <p className='text-[16px] text-[#4F4F4F] font-light'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis.</p>
+              <p className='text-[16px] text-[#4F4F4F] font-light'>During zoning and planning, Ghadboun Group ensures compliance with regulations, optimizes space utilization, and strategically plans layouts for efficient and sustainable project execution.</p>
             </div>
             <div className='mb-[20px]'>
               <h3 className='text-[24px] mb-[10px]'>Construction</h3>
-              <p className='text-[16px] text-[#4F4F4F] font-light'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <p className='text-[16px] text-[#4F4F4F] font-light'>In the construction phase, Ghadboun Group utilizes advanced techniques and high-quality materials to build durable, efficient, and cutting-edge structures, ensuring timely project delivery.</p>
             </div>
             <div className='mb-[20px]'>
               <h3 className='text-[24px] mb-[10px]'>Finishes</h3>
-              <p className='text-[16px] text-[#4F4F4F] font-light'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </p>
+              <p className='text-[16px] text-[#4F4F4F] font-light'>Ghadboun Group's finishes stage focuses on meticulous attention to detail, selecting premium materials and applying expert craftsmanship to achieve elegant and flawless project completion.</p>
             </div>
             <div id='post-tension' className='mb-[20px]'>
               <h3 className='text-[24px] mb-[10px]'>Post-Tension Concrete</h3>
