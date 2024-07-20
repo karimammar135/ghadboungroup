@@ -156,4 +156,3 @@ def get_image(request, id):
     item = Item.objects.get(pk=id)
 
     return JsonResponse(item.serialize(), safe=False)
-
