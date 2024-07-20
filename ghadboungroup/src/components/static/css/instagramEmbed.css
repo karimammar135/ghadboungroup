@@ -1,0 +1,10 @@
+.instagram-container {
+    width: 100%; /* Make the container width 100% of its parent */
+    max-width: 350px; /* Set a maximum width */
+    overflow: hidden; /* Prevent overflow */
+    position: fixed;
+    bottom: 50%;
+    right: 50%;
+    transform: translateX(50%) translateY(50%);
+    z-index: 20;
+}

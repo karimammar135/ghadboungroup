@@ -3,10 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 0 100px 0;
-    @media (max-width: 960px) {
-        padding-bottom: 60px;
-    }
+    padding: 60px 0 0px 0;
 
     .section-wrapper {
         display: flex;
