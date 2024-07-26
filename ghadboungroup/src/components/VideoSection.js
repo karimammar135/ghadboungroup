@@ -11,7 +11,7 @@ export default function VideoSection() {
     return (
         <section className='w-full'>
             <div></div>
-            <div className='relative flex justify-center items-center w-full h-[350px] mt-[60px] mb-[100px] bg-center bg-cover bg-no-repeat' style={{ backgroundImage: `url(${video_wallpaper})` }}>
+            <div className='relative flex justify-center items-center w-full h-[350px] mt-[60px] mb-[100px] bg-center bg-cover bg-no-repeat' style={{ backgroundImage: `url(${video_wallpaper})`, backgroundColor: 'black' }}>
                 <h1 className='text-[32px]  text-white'>Quality Work On Site</h1>
                 <Button setPopUp={setPopUp} />
             </div>

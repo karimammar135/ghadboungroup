@@ -66,14 +66,6 @@ export default function Gallery() {
 
   // Context
   const [showImage, setShowImage] = useOutletContext();
-  
-  console.log(`----`)
-  console.log(`next pagee: ${nextPage}`)
-  console.log(`previous pagee: ${prevPage}`)
-  console.log(`isPrev: ${isPrev}`)
-  console.log(`isNext: ${isNext}`)
-  console.log(`imagesNum: ${pageSize}`)
-  console.log(`----`)
 
   useEffect(() => {
     if (category_param != undefined){

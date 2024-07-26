@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
-import { NavLink, useLocation, useOutletContext } from 'react-router-dom'
+import React, {useEffect, useRef, useState} from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 
 import classNames from 'classnames'
 import search_icon from './static/images/search-icon.png'
+import SearchEngine from './SearchEngine'
 
-export default function DesktopMenu({ scrollTo }){
+export default function DesktopMenu({ scrollTo, searchEngine, setSearchEngine }){
   const[openDropdown, setOpenDropdown] = useState('');
   const location = useLocation();
   const { hash, pathname, search } = location;
@@ -32,7 +33,10 @@ export default function DesktopMenu({ scrollTo }){
       </NavLinks>
       <div className='icons'>
         <NavLink to="/contactus" onClick={() => window.scrollTo(0, 0)}><i className="fa-solid fa-paper-plane"></i></NavLink>
-        <img src={search_icon} alt="search"></img>
+        <div className='relative'>
+          <img onClick={() => setSearchEngine(true)} className='cursor-pointer' src={search_icon} alt="search"></img>
+          {searchEngine && <SearchEngine setSearchEngine={setSearchEngine} scrollTo={scrollTo} />}
+        </div>
       </div>
     </>
   )

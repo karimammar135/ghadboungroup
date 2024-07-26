@@ -12,7 +12,7 @@ export default function MainSection() {
     const [images, setImages] = useState(null)
 
     // Context
-    const [showImage, setShowImage] = useOutletContext();
+    const [showImage, setShowImage] = useOutletContext()
 
     // Fetching images from API route
     useEffect(() => {

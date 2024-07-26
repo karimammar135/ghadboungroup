@@ -5,8 +5,9 @@ import classNames from 'classnames'
 import bars from './static/images/bars.png'
 import search_icon from './static/images/search-icon.png'
 import logo from './static/images/logo-design.png'
+import SearchEngine from './SearchEngine'
   
-export default function MobileMenu({ scrollTo }) {
+export default function MobileMenu({ scrollTo, searchEngine, setSearchEngine }) {
   const [expand, setExpand] = useState('')
   const location = useLocation();
   const { hash, pathname, search } = location;
@@ -30,7 +31,7 @@ export default function MobileMenu({ scrollTo }) {
 
  return (
   <div className='navbar2'>
-    <Icons />
+    <Icons searchEngine={searchEngine} setSearchEngine={setSearchEngine} scrollTo={scrollTo}/>
     {!isOpen && <img src={bars} alt="bars" onClick={() => toggleMenu()}></img>
     || <i className="fa-regular fa-rectangle-xmark z-50 text-3xl text-white" onClick={() => toggleMenu()}></i>}
     <div className={classNames('custom-nav absolute w-screen bg-zinc-900 top-0 right-0 flex justify-center items-center', {'mobile-nav open': isOpen, 'mobile-nav2 close': !isOpen})}>
@@ -98,11 +99,14 @@ function DropItem(props){
   )
 }
 
-function Icons(){
+function Icons({ searchEngine, setSearchEngine, scrollTo }){
   return (
     <div className='icons'>
         <NavLink to="/contactus"><i className="fa-solid fa-paper-plane"></i></NavLink>
-        <img src={search_icon} alt="search"></img>
+        <div className='nos:relative'>
+          <img onClick={() => setSearchEngine(true)} className='cursor-pointer' src={search_icon} alt="search"></img>
+          {searchEngine && <SearchEngine setSearchEngine={setSearchEngine} scrollTo={scrollTo} />}
+        </div>
     </div>
   )
 }

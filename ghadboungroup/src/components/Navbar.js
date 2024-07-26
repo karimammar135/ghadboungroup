@@ -7,6 +7,7 @@ import DesktopMenu from './DesktopMenu'
 export default function Navbar({ scrollTo }){
   const[screenWidth, setScreenWidth] = useState(window.innerWidth)
   const[smallScreen, setSmallScreen] = useState(false);
+  const[searchEngine, setSearchEngine] = useState(false)
 
   const handleResize = () => {
     setScreenWidth(window.innerWidth)
@@ -33,7 +34,7 @@ export default function Navbar({ scrollTo }){
           <img src={logo} alt="logo"></img>
           <h1>Ghadboun group</h1>
         </div>
-        {!smallScreen && <DesktopMenu scrollTo={scrollTo} /> || <MobileMenu scrollTo={scrollTo} />}
+        {!smallScreen && <DesktopMenu scrollTo={scrollTo} searchEngine={searchEngine} setSearchEngine={setSearchEngine} /> || <MobileMenu scrollTo={scrollTo} searchEngine={searchEngine} setSearchEngine={setSearchEngine} />}
       </nav>
     </section>
   )
