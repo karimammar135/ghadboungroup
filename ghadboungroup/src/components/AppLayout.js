@@ -15,7 +15,7 @@ export default function AppLayout() {
   useEffect(() => {
       let myloader = setTimeout(() => {
           setLoader(false)
-      }, 3500)
+      }, 4000)
       return () => {
           clearTimeout(myloader);
       }
