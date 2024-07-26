@@ -9,7 +9,7 @@ export default function VideoSection() {
     const [popUp, setPopUp] = useState(false)
     
     return (
-        <section className='w-full'>
+        <section id="video" className='w-full'>
             <div></div>
             <div className='relative flex justify-center items-center w-full h-[350px] mt-[60px] mb-[100px] bg-center bg-cover bg-no-repeat' style={{ backgroundImage: `url(${video_wallpaper})`, backgroundColor: 'black' }}>
                 <h1 className='text-[32px]  text-white'>Quality Work On Site</h1>
@@ -34,7 +34,7 @@ function Button({ setPopUp }) {
 function PopUp({ setPopUp, setToggleVideo }){
     return (
         <section className='z-20 fixed top-0 left-0 w-[100%] min-h-[100vh] flex flex-col justify-around items-center backdrop-blur-sm'>
-            <div className='relative flex flex-col gap-[15px] items-center justify-center rounded-lg w-[100%] max-w-[275px] h-[220px] bg-white'>
+            <div className='relative shadow flex flex-col gap-[15px] items-center justify-center rounded-lg w-[100%] max-w-[275px] h-[220px] bg-white'>
                 <i onClick={() => setPopUp(false)} className="cursor-pointer absolute top-[12px] left-[12px] text-[18px] fa-regular fa-circle-xmark text-black text-[30px]"></i>
                 <img alt="video icon" src={VideoIcon}></img>
                 <button className='h-[30px] w-[155px] bg-[#C7C7C7] rounded text-white text-[12px]' onClick={() => {setToggleVideo(true); setPopUp(false)}}>Whach here</button>
