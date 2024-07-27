@@ -70,6 +70,8 @@ export default function SearchEngine({ setSearchEngine, scrollTo }) {
     }
 
     // Search Query
+    const searchQuery = () => {
+    }
 
     return (
         <form onSubmit={() => searchQuery()} ref={ref} className='absolute left-0 w-full pl-[15px] pr-[15px] 820:pl-0 820:pr-0 820:w-fit 820:translate-x-[-90%]'>

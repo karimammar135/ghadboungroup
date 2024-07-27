@@ -12,7 +12,7 @@ export default function ServicesSection() {
     <section className='services-section'>
       <div className='section-wrapper'>
         <div className='top-container'>
-            <div className='image' style={{ backgroundImage: `url('${background}')` }}></div>
+            <div className='image bg-[#4E443C]' style={{ backgroundImage: `url('${background}')` }}></div>
             <div className='text-container'>
                 <h1>Services provided by us</h1>
                 <p>Ghadboun Group provides exceptional construction services, including architecture and interior design. Utilizing modern features like Post-Tension concrete and 3D modeling, we deliver innovative, high-quality projects.

@@ -89,7 +89,7 @@ function InfoSection(){
             </div>
             <div id='post-tension' className='mb-[20px]'>
               <h3 className='text-[24px] mb-[10px]'>Post-Tension Concrete</h3>
-              <div style={{ backgroundImage: `url(${post_tensioning})` }} className='w-full h-[300px] nos:h-[350px] vl:h-[450px] mb-[10px] bg-cover bg-no-repeat bg-center rounded-md'></div>
+              <div style={{ backgroundImage: `url(${post_tensioning})` }} className='bg-[#4E443C] w-full h-[300px] nos:h-[350px] vl:h-[450px] mb-[10px] bg-cover bg-no-repeat bg-center rounded-md'></div>
               <p className='text-[16px] text-[#4F4F4F] font-light'> Ghadboun grroup uses Post-tensioning which is the most modern and up to date method used in constructions. Post-tensioning is a method of reinforcing (strengthening) concrete or other materials with high-strength steel strands or bars, typically referred to as tendons..</p>
             </div>
           </div>

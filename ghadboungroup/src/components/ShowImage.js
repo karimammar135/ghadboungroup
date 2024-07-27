@@ -11,7 +11,6 @@ const categories = {
 }
 
 export default function ShowImage({ image, setShowImage }) {
-  console.log(image)
 
   return (
     <div className='min-h-screen w-screen fixed top-0 left-0 bg-[#000000a1] z-50 flex flex-col justify-center items-center gap-3'>
