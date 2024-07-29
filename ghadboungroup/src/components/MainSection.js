@@ -148,7 +148,7 @@ export default function MainSection() {
                             {images != null && 
                             <swiper-container init="false" className="mySwiper" effect="coverflow" grab-cursor="true" centered-slides="true" slides-per-view="3" coverflow-effect-rotate="0" coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="0" coverflow-effect-slide-shadows="true" loop="true">
                                 {images.map((image) => {
-                                    return <swiper-slide key={image.id} style={{ backgroundImage: `url(${image.image_url})` }} onClick={() => openImage(image.id)}></swiper-slide>
+                                    return <swiper-slide key={image.id} style={{ backgroundImage: `url(${image.image_url})`, backgroundColor: '#33281f' }} onClick={() => openImage(image.id)}></swiper-slide>
                                 })}
                             </swiper-container>
                             || 

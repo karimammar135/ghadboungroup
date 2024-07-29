@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import logo from './static/images/logo.png'
 import './static/css/footer.css'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
-import { useNavigate, useLocation } from 'react-router-dom'
 
 export default function Footer({ setShowImage, scrollTo }) {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -70,7 +69,7 @@ function MainContainer({ setShowImage, scrollTo }) {
                     <img src={logo} alt="logo"></img>
                     <h1>Ghadboun group</h1>
                 </div>
-                <p>Innovative construction, architecture, and interior design solutions.</p>
+                <p>Innovative construction, architecture, wood works and interior design solutions.</p>
             </div>
             <div className='links'>
                 <h3>Service</h3>

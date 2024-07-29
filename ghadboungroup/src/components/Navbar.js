@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import logo from './static/images/logo.png'
 import MobileMenu from './MobileMenu'
 import DesktopMenu from './DesktopMenu'
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar({ scrollTo }){
   const[screenWidth, setScreenWidth] = useState(window.innerWidth)
@@ -27,13 +28,20 @@ export default function Navbar({ scrollTo }){
     }
   }, [])
 
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // For smooth scrolling
+    })
+  }
+
   return (
     <section className='nav-wrapper z-10'>
       <nav>
-        <div className='logo'>
+        <NavLink to="/" onClick={() => scrollTop()} className='logo'>
           <img src={logo} alt="logo"></img>
           <h1>Ghadboun group</h1>
-        </div>
+        </NavLink>
         {!smallScreen && <DesktopMenu scrollTo={scrollTo} searchEngine={searchEngine} setSearchEngine={setSearchEngine} /> || <MobileMenu scrollTo={scrollTo} searchEngine={searchEngine} setSearchEngine={setSearchEngine} />}
       </nav>
     </section>
