@@ -23,7 +23,7 @@ export default function VideoSection() {
 
 function Button({ setPopUp }) {
   return (
-    <div onClick={() => setPopUp(true)} className='absolute flex justify-center items-center bottom-0 right-[50%] translate-y-2/4 translate-x-2/4 w-[70px] h-[70px] bg-[#b5a9a9ab] rounded-full'>
+    <div onClick={() => setPopUp(true)} className='absolute flex justify-center items-center cursor-pointer bottom-0 right-[50%] translate-y-2/4 translate-x-2/4 w-[70px] h-[70px] bg-[#b5a9a9ab] rounded-full'>
         <div className='flex justify-center items-center w-[36px] h-[36px] bg-[#8E8585] rounded-full'>
             <i className="fa-solid fa-play text-white pl-[3.5px] text-[14px]"></i>
         </div>

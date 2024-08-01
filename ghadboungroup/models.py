@@ -11,9 +11,11 @@ class Item(models.Model):
     CATEGORIES = [
         ('KITCHEN', 'Kitchen'),
         ('LIVINGROOM', 'Living room'),
+        ('DOOR', 'door'),
         ('BATHROOM', 'Bath room'),
         ('BEDROOM', 'Bed room'),
         ('EXTERIOR', 'Exterior'),
+        ('OTHER', 'Other'),
     ]
     image = models.ImageField(upload_to='ghadboungroup/static/images', blank=True)
     description = models.TextField(blank=True)

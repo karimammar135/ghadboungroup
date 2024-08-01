@@ -25,6 +25,8 @@ export default function DesktopMenu({ scrollTo, searchEngine, setSearchEngine })
         <DropMenu name="Categories" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown}>
           <DropItem link="/gallery" path={`${pathname}${hash}`}>gallery</DropItem>
           <DropItem link="/gallery/kitchen" path={`${pathname}${hash}`}>Kitchen</DropItem>
+          <DropItem link="/gallery/livingroom" path={`${pathname}${hash}`}>Living room</DropItem>
+          <DropItem link="/gallery/door" path={`${pathname}${hash}`}>Doors</DropItem>
           <DropItem link="/gallery/bathroom" path={`${pathname}${hash}`}>Bath room</DropItem>
           <DropItem link="/gallery/bedroom" path={`${pathname}${hash}`}>Bed room</DropItem>
           <DropItem link="/gallery/exterior" path={`${pathname}${hash}`}>Exterior</DropItem>

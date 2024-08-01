@@ -51,6 +51,8 @@ export default function MobileMenu({ scrollTo, searchEngine, setSearchEngine }) 
           <DropMenu name="Categories" className="block text-3xl text-white" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} expand={expand} setExpand={setExpand}>
               <DropItem link="/gallery" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>gallery</DropItem>
               <DropItem link="/gallery/kitchen" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Kitchen</DropItem>
+              <DropItem link="/gallery/livingroom" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Living room</DropItem>
+              <DropItem link="/gallery/door" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Doors</DropItem>
               <DropItem link="/gallery/bathroom" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Bath room</DropItem>
               <DropItem link="/gallery/bedroom" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Bed room</DropItem>
               <DropItem link="/gallery/exterior" path={`${pathname}${hash}`} toggleMenu={toggleMenu}>Exterior</DropItem>

@@ -29,7 +29,11 @@ export default function AppLayout() {
     }
     
     let timer = setTimeout(() => {
-      document.getElementById(`${location}`).scrollIntoView({ behavior: 'smooth', block: `${postion}` })
+      if (location === undefined){
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      } else {
+        document.getElementById(`${location}`).scrollIntoView({ behavior: 'smooth', block: `${postion}` });
+      }
       clearTimeout(timer)
     }, 200)
   

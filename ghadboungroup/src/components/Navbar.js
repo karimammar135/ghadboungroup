@@ -28,20 +28,13 @@ export default function Navbar({ scrollTo }){
     }
   }, [])
 
-  const scrollTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth' // For smooth scrolling
-    })
-  }
-
   return (
     <section className='nav-wrapper z-10'>
       <nav>
-        <NavLink to="/" onClick={() => scrollTop()} className='logo'>
+        <div className='logo cursor-pointer' onClick={() => scrollTo('')}>
           <img src={logo} alt="logo"></img>
           <h1>Ghadboun group</h1>
-        </NavLink>
+        </div>
         {!smallScreen && <DesktopMenu scrollTo={scrollTo} searchEngine={searchEngine} setSearchEngine={setSearchEngine} /> || <MobileMenu scrollTo={scrollTo} searchEngine={searchEngine} setSearchEngine={setSearchEngine} />}
       </nav>
     </section>
