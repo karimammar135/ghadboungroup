@@ -3,42 +3,7 @@
     <url>
         <loc>https://ghadboungroup.com/</loc>
         <lastmod>2024-08-01</lastmod>
-    </url>
-    <!-- Add more URLs here -->
-    <url>
-        <loc>https://ghadboungroup.com/contactus</loc>
-        <lastmod>2024-08-01</lastmod>
-    </url>
-    <url>
-        <loc>https://ghadboungroup.com/services</loc>
-        <lastmod>2024-08-01</lastmod>
-    </url>
-    <url>
-        <loc>https://ghadboungroup.com/gallery</loc>
-        <lastmod>2024-08-01</lastmod>
-    </url>
-    <url>
-        <loc>https://ghadboungroup.com/gallery/kitchen</loc>
-        <lastmod>2024-08-01</lastmod>
-    </url>
-    <url>
-        <loc>https://ghadboungroup.com/gallery/livingroom</loc>
-        <lastmod>2024-08-01</lastmod>
-    </url>
-    <url>
-        <loc>https://ghadboungroup.com/gallery/door</loc>
-        <lastmod>2024-08-01</lastmod>
-    </url>
-    <url>
-        <loc>https://ghadboungroup.com/gallery/bathroom</loc>
-        <lastmod>2024-08-01</lastmod>
-    </url>
-    <url>
-        <loc>https://ghadboungroup.com/gallery/bedroom</loc>
-        <lastmod>2024-08-01</lastmod>
-    </url>
-    <url>
-        <loc>https://ghadboungroup.com/gallery/exterior</loc>
-        <lastmod>2024-08-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
     </url>
 </urlset>
