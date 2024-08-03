@@ -3,7 +3,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index, {'path': ''}, name="index"),
-    re_path(r'^(?P<path>.*)/$', views.index, name="index"),
+    path('sitemap.xml/', views.sitemap, name='sitemap'),
+    re_path(r'^(?!sitemap\.xml$)(?P<path>.*)/$', views.index, name="index"),
 
     # API Routes
     path('get_images/<int:limit>/<str:category>/<str:order>', views.get_images, name='get_images'),

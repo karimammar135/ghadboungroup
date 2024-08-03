@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+import os
+from django.conf import settings
 from .models import Item
 from pathlib import Path
 import random
@@ -7,6 +9,17 @@ import random
 # views
 def index(request, path):
     return render(request, 'ghadboungroup/index.html')
+
+# Open sitemap.xml file
+def sitemap(request):
+    sitemap_path = os.path.join(settings.BASE_DIR, 'sitemap.xml')
+    try:
+        with open(sitemap_path, 'rb') as f:
+            response = HttpResponse(f.read(), content_type='application/xml')
+            response['Content-Disposition'] = 'inline; filename="sitemap.xml"'
+            return response
+    except FileNotFoundError:
+        return HttpResponse("Sitemap not found.", status=404)
 
 ''' Get Images API route '''
 # Chack category 
