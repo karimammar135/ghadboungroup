@@ -10,9 +10,11 @@ const categories = {
   'all': 'Gallery',
   'KITCHEN': 'Kitchen',
   'LIVINGROOM': 'Living Room',
+  'DOOR': 'Doors',
   'BATHROOM': 'Bath Room',
   'BEDROOM': 'Bed Room',
-  'EXTERIOR': 'Exterior'
+  'EXTERIOR': 'Exterior',
+  "OTHER": 'other'
 }
 
 export default function Gallery() {
