@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 import os
 from django.conf import settings
-from .models import Item
+from .models import Item, Image
+from supabase import create_client, Client
 from pathlib import Path
 import random
 
@@ -169,3 +170,10 @@ def get_image(request, id):
     item = Item.objects.get(pk=id)
 
     return JsonResponse(item.serialize(), safe=False)
+
+
+''' Push Image to supabase storage bucket '''
+# Setup supabase
+url: str = os.environ.get("SUPABASE_URL")
+key: str = os.environ.get("SUPABASE_KEY")
+supabase: Client = create_client(url, key)

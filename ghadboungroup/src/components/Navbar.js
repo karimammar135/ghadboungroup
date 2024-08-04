@@ -3,12 +3,13 @@ import React, { useState, useEffect } from 'react'
 import logo from './static/images/logo.png'
 import MobileMenu from './MobileMenu'
 import DesktopMenu from './DesktopMenu'
-import { NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar({ scrollTo }){
   const[screenWidth, setScreenWidth] = useState(window.innerWidth)
   const[smallScreen, setSmallScreen] = useState(false);
-  const[searchEngine, setSearchEngine] = useState(false)
+  const[searchEngine, setSearchEngine] = useState(false);
+  const navigate = useNavigate();
 
   const handleResize = () => {
     setScreenWidth(window.innerWidth)
@@ -31,7 +32,7 @@ export default function Navbar({ scrollTo }){
   return (
     <section className='nav-wrapper z-10'>
       <nav>
-        <div className='logo cursor-pointer' onClick={() => scrollTo('')}>
+        <div className='logo cursor-pointer' onClick={() => navigate('-1')}>
           <img src={logo} alt="logo"></img>
           <h1>Ghadboun group</h1>
         </div>

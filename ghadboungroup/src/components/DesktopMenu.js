@@ -61,10 +61,10 @@ function DropMenu(props){
       props.setOpenDropdown(props.name);
     }
   }
-  
+
   return (
-    <div className='drop-menu'>
-      <NavLink className="drop-link" onClick={(e) => {toggleDropdown(e); window.scrollTo(0, 0)}}>
+    <div className='drop-menu' >
+      <NavLink className="drop-link" onClick={(e) => {toggleDropdown(e)}}>
         {props.name}
         <i className={classNames("fa-solid fa-angle-down", {'flip-arrow': (props.openDropdown === props.name)})}></i>
       </NavLink>
