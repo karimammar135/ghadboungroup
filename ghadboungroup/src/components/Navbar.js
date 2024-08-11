@@ -32,7 +32,7 @@ export default function Navbar({ scrollTo }){
   return (
     <section className='nav-wrapper z-10'>
       <nav>
-        <div className='logo cursor-pointer' onClick={() => navigate('-1')}>
+        <div className='logo cursor-pointer' onClick={() => {window.scroll({top: 0, behavior: "smooth"}); navigate('/')}}>
           <img src={logo} alt="logo"></img>
           <h1>Ghadboun group</h1>
         </div>

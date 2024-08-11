@@ -14,7 +14,7 @@ const categories = {
   'BATHROOM': 'Bath Room',
   'BEDROOM': 'Bed Room',
   'EXTERIOR': 'Exterior',
-  "OTHER": 'other'
+  "OTHER": 'Gallery'
 }
 
 export default function Gallery() {

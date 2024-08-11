@@ -7,6 +7,21 @@
     }
 }
 
+// Upload Image box
+.upload-box {
+    position: relative;
+    width: 388px;
+    max-width: 90vw;
+}
+.upload-box::after {
+    content:     "";
+    display:     block;
+    padding-top: 100%;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23F8780FFF' stroke-width='3' stroke-dasharray='7%2c 20' stroke-dashoffset='32' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 10px;
+    background-color: #f1f1f147;
+}
+
 // default btn
 .default-btn {
     cursor: pointer;

@@ -9,6 +9,8 @@ import Services from "./Services"
 import NotFound from './NotFound.js'
 import Gallery from "./Gallery.js"
 import ContactUs from './ContactUs'
+import UploadImage from "./UploadImage.js"
+import EditImage from './EditImage.js'
 
 export default function App(){
     return (
@@ -21,6 +23,8 @@ export default function App(){
                     <Route path=":category_param" element={<Gallery />} />
                 </Route>
                 <Route path="/contactus" element={<ContactUs />} />
+                <Route path="/upload_image" element={<UploadImage />} />
+                <Route path="/editImage/:image_id" element={<EditImage />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>

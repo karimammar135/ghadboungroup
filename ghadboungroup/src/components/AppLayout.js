@@ -6,19 +6,36 @@ import Footer from './Footer.js'
 import Loader from './Loader.js'
 import WhatsappUs from './Whatsappus.js'
 import ShowImage from './ShowImage.js'
+import AddImage from './AddImage.js'
 
 export default function AppLayout() {
   const [loader, setLoader] = useState(true)
   const [showImage, setShowImage] = useState(false)
+  const [isAdmin, setIsAdmin] = useState()
   const navigate = useNavigate()
   
+  // Loading 
   useEffect(() => {
       let myloader = setTimeout(() => {
           setLoader(false)
-      }, 4000)
+      }, 0)
       return () => {
           clearTimeout(myloader);
       }
+  }, [])
+
+  // Check for admin
+  const checkAdmin = async () => {
+    try{
+      const response = await fetch("/isAdmin")
+      const data = await response.json()
+      setIsAdmin(data.isAdmin)
+    } catch (error){
+      console.error(error.message)
+    }
+  }
+  useEffect(() => {
+    checkAdmin()
   }, [])
 
   // Scroll to a specific section
@@ -44,7 +61,8 @@ export default function AppLayout() {
         {loader && <Loader />}
         {showImage && <ShowImage image={showImage} setShowImage={setShowImage}/>}
         <Navbar scrollTo={scrollTo}/>
-        <WhatsappUs />
+        {!isAdmin && <WhatsappUs />}
+        {isAdmin && <AddImage />}
         <Outlet context={[ showImage, setShowImage ]}/>
         <Footer setShowImage={setShowImage} scrollTo={scrollTo}/>
     </div>
