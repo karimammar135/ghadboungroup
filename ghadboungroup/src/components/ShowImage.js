@@ -13,7 +13,7 @@ const categories = {
   'OTHER': 'Other',
 }
 
-export default function ShowImage({ image, setShowImage }) {
+export default function ShowImage({ image, setShowImage, isAdmin }) {
   const navigate = useNavigate()
 
   const scrollTop = () => {
@@ -33,7 +33,7 @@ export default function ShowImage({ image, setShowImage }) {
       <div className='grow flex flex-col justify-center items-center gap-3'>
         <i className="fa-regular fa-circle-xmark text-3xl text-white" onClick={() => setShowImage(false)}></i>
         <div>
-          <NavigateTo to={`/editImage/${image.id}`} navigate={navigate} func={closeImage} className='text-white p-2 bg-slate-400 rounded cursor-pointer' placeholder="Edit Image"></NavigateTo>
+          {isAdmin && <NavigateTo to={`/editImage/${image.id}`} navigate={navigate} func={closeImage} className='text-white p-2 bg-slate-400 rounded cursor-pointer' placeholder="Edit Image"></NavigateTo>}
           <img src={image.image_url} className='max-h-[70vh]'></img>
         </div>
         <h1 className='text-white text-4xl font-light'>{categories[image.category]}</h1>

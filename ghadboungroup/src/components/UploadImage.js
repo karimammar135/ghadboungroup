@@ -11,6 +11,7 @@ function getCsrfToken() {
 const categories = {
     "Kitchen": "KITCHEN",
     "Door": "DOOR",
+    "Living room": "LIVINGROOM",
     "Bathroom": "BATHROOM",
     "Bedroom": "BEDROOM",
     "Exterior": "EXTERIOR",
