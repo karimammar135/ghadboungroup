@@ -59,7 +59,7 @@ export default function AppLayout() {
   return (
     <div>
         {loader && <Loader />}
-        {showImage && <ShowImage image={showImage} setShowImage={setShowImage}/>}
+        {showImage && <ShowImage image={showImage} setShowImage={setShowImage} isAdmin={isAdmin}/>}
         <Navbar scrollTo={scrollTo}/>
         {!isAdmin && <WhatsappUs />}
         {isAdmin && <AddImage />}
