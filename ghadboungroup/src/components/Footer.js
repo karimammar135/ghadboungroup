@@ -120,8 +120,8 @@ function FooterBottom({ smallScreen }) {
         <div className='footer_bottom'>
             <div className='line'></div>
             <div className='content'>
-                <span>Copy Right @ 2024</span>
-                {smallScreen && <span>Created with love</span>}
+                <span>Developed by <a target='_blank' className='font-medium text-orange-500 hover:text-orange-600' href='https://www.instagram.com/karimammar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='>Karim Ammar</a></span>
+                {smallScreen && <span>Copy Right @ 2024</span>}
                 <ul className='social-media-list'>
                     <li><a target='_blank' href="https://www.instagram.com/ghadboun.group?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i className="fa-brands fa-instagram"></i></a></li>
                     <li><a target='_blank' href="https://www.tiktok.com/@ghadboungroup"><i className="fa-brands fa-tiktok"></i></a></li>
